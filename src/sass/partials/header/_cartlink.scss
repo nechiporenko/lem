@@ -1,0 +1,46 @@
+﻿@import "../../modules/_base.scss";
+/*Header cartlink*/
+.b-cartlink{
+    @extend .b-header__btn;
+    position:relative;
+
+    &.active{
+        .b-cartlink__count{
+            display:block;
+        }
+    }
+}
+
+.b-cartlink__count{
+    display:none;
+    @include size(14px);
+    line-height:14px;
+    box-sizing:border-box;
+    text-align:center;
+    color:#fff;
+    background:$color2;
+    @include font-size(9px);
+    position:absolute;
+    top:0; right:0;
+    @include px2rem(letter-spacing, -.8px);
+}
+
+@include media($desktop){
+    .b-cartlink{
+        @include size(48px);
+        line-height:48px;
+        @include font-size(26px);
+        color:$title-color;
+        background:none !important;
+
+        &.active{
+            color:$primary;
+        }
+    }
+
+    .b-cartlink__count{
+        @include size(16px);
+        line-height:16px;
+        border-radius:50%;
+    }
+}

@@ -1,0 +1,65 @@
+﻿@import "../../modules/_base.scss";
+/*Header Logo*/
+.b-header__logo{
+    float:left;
+    margin-right:10px;
+    width:35px;
+    height:36px;
+    @include hide-text;
+    background-image:url(../img/logo-publishing.png);
+    background-position:0 0;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+.b-header__logo--etching{
+    background-image:url(../img/logo-etching.png);
+}
+
+.b-header__logo--polygraphy{
+    background-image:url(../img/logo-polygraphy.png);
+}
+
+.b-header__logo--stamp{
+    background-image:url(../img/logo-stamp.png);
+}
+
+.b-header__logo--training{
+    background-image:url(../img/logo-training.png);
+}
+
+@include media($desktop){
+    .b-header__logo{
+        width:69px;
+        height:72px;
+        margin-right:90px;
+        background-size:unset;
+    }
+}
+
+
+@include hidpi(1.5){
+    .b-header__logo{
+        background-image:url(../img/logo-publishing-2x.png);
+        background-size:100% 100%;
+    }
+
+    .b-header__logo--etching{
+        background-image:url(../img/logo-etching-2x.png);
+    }
+
+    .b-header__logo--polygraphy{
+        background-image:url(../img/logo-polygraphy-2x.png);
+    }
+
+    .b-header__logo--stamp{
+        background-image:url(../img/logo-stamp-2x.png);
+    }
+
+    .b-header__logo--training{
+        background-image:url(../img/logo-training-2x.png);
+    }
+}
+
+
+

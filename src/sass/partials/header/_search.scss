@@ -1,0 +1,19 @@
+﻿@import "../../modules/_base.scss";
+/*Header search*/
+.b-header__search{
+    @extend .b-header__btn;
+
+    @include media($desktop){
+        @include size(48px);
+        margin-left:10px;
+        line-height:48px;
+        @include font-size(26px);
+        color:$title-color;
+        background:none !important;
+
+        &:hover,
+        &:focus{
+            color:$primary;
+        }
+    }
+}

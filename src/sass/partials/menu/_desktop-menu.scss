@@ -1,0 +1,75 @@
+﻿@import "../../modules/_base.scss";
+/* Desktop Menu */
+.menu{
+    @extend .g-clearlist;
+    padding-top:30px;
+    float:left;
+    font-size:0;
+    display:none;
+
+    @include media($desktop){
+        display:block;
+    }
+}
+
+.menu__item{
+    display:inline-block;
+    @include font-size(14px);
+    margin-left:25px;
+    position:relative;
+    &:first-child{
+        margin-left:0;
+    }
+}
+
+.menu__link{
+    display:inline-block;
+    padding:6px 2px;
+    border-bottom:2px solid #fff;
+    border-top:2px solid #fff;
+    box-sizing:border-box;
+}
+
+.menu__link,
+.submenu__link{
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:600;
+    color:$title-color;
+
+    &:hover,
+    &:active,
+    &.hover{
+        color:$primary;
+    }
+
+    &.current{
+        color:$primary;
+        border-bottom-color:$primary;
+        cursor:default;
+    }
+}
+
+//submenu
+.submenu{
+    display:none;
+    list-style:none;
+    margin:0;
+    padding:0 10px 10px;
+    position:absolute;
+    min-width:250px;
+    top:100%;
+    left:-10px;
+    background:#fff;
+    z-index:1000;
+    box-shadow:-3px 3px 6px -2px rgba(#000, .2), 1px 1px 2px -1px rgba(#000, .1);
+}
+
+.submenu__item{
+    display:block;
+}
+.submenu__link{
+    display:block;
+    line-height:1.1;
+    padding:10px 2px;
+}

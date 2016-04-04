@@ -1,0 +1,38 @@
+﻿@import "../../modules/_base.scss";
+/*Header phones block*/
+.b-phone{
+    display:none;
+    vertical-align:middle;
+    margin-left:15px;
+
+    @include media($desktop){
+        display:inline-block;
+    }
+}
+.b-phone__num{
+    display:block;
+    margin-bottom:5px;
+    color:$title-color;
+    text-decoration:none;
+    @include font-size(22px);
+    white-space:nowrap;
+    @include px2rem(letter-spacing, -.1px);
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+.b-phone__callback{
+    @extend .g-clearbutton;
+    padding:2px 0;
+    @include font-size(14px);
+    border-bottom:1px dashed $title-color;
+
+    &:hover,
+    &:active{
+        color:$primary;
+        border-color:$primary;
+    }
+}

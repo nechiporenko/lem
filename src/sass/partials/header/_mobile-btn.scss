@@ -1,0 +1,23 @@
+﻿@import "../../modules/_base.scss";
+/*Header mobile buttons*/
+.b-header__btn{
+    @extend .g-clearbutton;
+    @include size(36px);
+    line-height:36px;
+    background-color:$primary;
+    color:#fff;
+    @include font-size(21px);
+
+    &:hover,
+    &:active,
+    &:focus{
+        background-color:lighten($primary, 10%);
+    }
+}
+
+.b-header__btn--menu,
+.b-header__btn--callback{
+    @include media($desktop){
+        display:none;
+    }
+}
