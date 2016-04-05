@@ -35,6 +35,12 @@
 
         &.active{
             color:$primary;
+            @include transition(transform .3s);
+
+            &:hover,
+            &:active{
+                @include transform(translateY(-3px));
+            }
         }
     }
 

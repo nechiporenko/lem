@@ -1,0 +1,54 @@
+﻿@import "../../modules/_base.scss";
+/*Subscribe form*/
+.b-subscribe{
+    padding:27px 0;
+    background:#f5f5f5;
+
+    .g-input-field{
+        .error{
+                margin-bottom:8px;
+            }
+    }
+}
+
+.b-subscribe__label{
+    display:block;
+    margin-bottom:15px;
+    @include font-size(16px);
+    text-transform:uppercase;
+    line-height:1.1;
+    color:$title-color;
+    font-weight:600;
+}
+
+.b-subscribe__input{
+    @extend .g-input;
+}
+
+.b-subscribe__btn{
+    @extend .g-btn;
+    margin-bottom:0;
+}
+
+@include media($desktop){
+    .b-subscribe{
+        text-align:right;
+
+        .g-input-field{
+            display:inline-block;
+            vertical-align:middle;
+            margin:0 20px;
+        }
+    }
+
+    .b-subscribe__label{
+        display:inline-block;
+        vertical-align:middle;
+        margin-bottom:0;
+    }
+
+    .b-subscribe__input{
+        width:300px;
+        margin-bottom:0;
+    }
+}

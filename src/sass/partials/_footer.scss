@@ -1,3 +1,43 @@
 @import "../modules/base";
 
+@import "footer/_subscribe.scss";
+
 /*Site Footer*/
+.b-footer{
+    width:100%;
+    background:#2c2d2f;
+}
+.b-footer__main{
+    padding:22px 0;
+    color:#959595;
+    text-align:center;
+    @include font-size(14px);
+    line-height:strip-units($project-line-height/$project-font-size);
+
+    a{
+        color:inherit;
+        text-decoration:none;
+
+        &:hover,
+        &:active{
+            color:#fff;
+            text-decoration:underline;
+        }
+    }
+}
+
+.b-footer__copyright{
+    color:#646464;
+}
+
+@include media($desktop){//прибьем футер к низу страницы
+    .page{
+        padding-bottom:$footer-height;
+    }
+    .b-footer{
+        position:absolute;
+        height:$footer-height;
+        left:0;
+        bottom:0;
+    }
+}

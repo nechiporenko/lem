@@ -1,17 +1,21 @@
 @import "../modules/base";
 /*Site Header*/
 .b-header{
+    height:$header-height-sm;
+    //min-height:$header-height-sm;
+    //@include transition(min-height .3s);
+}
+
+.b-header__inner{
     position:fixed;
     top:0; left:0;
     width:100%;
     z-index:1000;
-    padding:10px 0;
+    padding:9px 0;
     background:#fff;
-
-    @include media($desktop){
-        padding:18px 0;
-    }
+    //@include transition(padding .3s);
 }
+
 
 .b-header__right{
     float:right;
@@ -20,6 +24,34 @@
         padding-top:23px;
     }
 }
+
+
+.b-header.scrolled{//будем добавлять класс скриптом
+    .b-header__inner{
+        box-shadow:0 2px 4px rgba(#000, .2);
+    }
+}
+
+
+@include media($desktop){
+    .b-header{
+        height:$header-height-xl;
+        //min-height:$header-height-xl;
+    }
+    .b-header__inner{
+        padding:18px 0;
+    }
+
+    .b-header.scrolled{
+        //height:$header-height-sm;
+        //min-height:$header-height-sm;
+
+        .b-header__inner{
+            //padding:9px 0;
+        }
+    }
+}
+
 
 @import "header/_logo.scss";
 @import "header/_mobile-btn.scss";

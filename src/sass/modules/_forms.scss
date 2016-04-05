@@ -19,8 +19,8 @@ textarea {
     display:inline-block;
     vertical-align:middle;
     width:100%;
-    @include px2rem(margin-bottom, $project-line-height);
-    @include px2rem(padding, 6px 10px);
+    margin-bottom:30px;
+    padding:6px 10px;
     background-color: #fff;
     border: 1px solid $border-color;
     border-radius:0;
@@ -37,6 +37,10 @@ textarea {
     &:focus{
         border-color:$primary;
         outline:0;
+    }
+
+    &:focus{
+        box-shadow:inset 0 0 4px rgba($primary, .6);
     }
 
     &:disabled{
@@ -65,8 +69,8 @@ textarea {
 
 .g-label{
     display: block;
-    @include px2rem(margin-bottom, $project-line-height/3);
-    font-weight: bold;
+    margin-bottom:15px;
+    font-weight:600;
 
     &.error{
         color:red;
@@ -85,33 +89,29 @@ input[type="radio"] {
 
 
 
-/*form notices*/
-.g-notice{
-    @include px2rem(padding, 16px 20px);
-    @include px2rem(margin, $project-line-height/2 0);
-    border:1px solid $primary;
-    border-radius:$border-radius;
-    text-align:center;
+.g-input-field{//обертка для валидации jquery validate
     position:relative;
-    display:none;
 
-    p{
-        @include px2rem(margin, $project-line-height/2 0);
-    }
-}
-.g-notice__close{
-    position:absolute;
-    top:5px;
-    right:5px;
-    text-decoration:none;
-    cursor:pointer;
-}
-
-.g-notice--bad{
-    color:red;
-    border-color:red;
-
-    .g-notice__close{
+    label.error{
+        display:inline-block;
+        min-width:20px;
+        max-width:240px;
+        padding:10px;
+        background:#fcebe7;
         color:red;
+        @include font-size(13px);
+        line-height:1.1;
+        position:absolute;
+        bottom:100%; right:0;
+        z-index:5;
+
+        &:after{
+            content:'';
+            @include triangle(16px, #fcebe7, down);
+            position:absolute;
+            right:10px;
+            bottom:-8px;
+        }
+        
     }
 }

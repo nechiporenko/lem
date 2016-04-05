@@ -17,6 +17,7 @@
     @include font-size(14px);
     margin-left:25px;
     position:relative;
+
     &:first-child{
         margin-left:0;
     }
@@ -28,6 +29,10 @@
     border-bottom:2px solid #fff;
     border-top:2px solid #fff;
     box-sizing:border-box;
+
+    [class^="icomoon-"], [class*=" icomoon-"]{
+        @include font-size(12px);
+    }
 }
 
 .menu__link,
@@ -72,4 +77,14 @@
     display:block;
     line-height:1.1;
     padding:10px 2px;
+}
+
+.no-js{
+    .menu__item{
+        &:hover{
+            & >ul {
+                display:block;
+            }
+        }
+    }
 }

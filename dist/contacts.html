@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home Page</title>
+    <title>Empty Page</title>
     <meta name="description" content="Page Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -26,7 +26,7 @@
                 <!--desktop menu-->
                 <ul class="menu js-menu">
                     <li class="menu__item">
-                        <a href="index.html" class="menu__link current">Главная</a>
+                        <a href="index.html" class="menu__link">Главная</a>
                     </li>
                     <li class="menu__item">
                         <a href="#!" class="menu__link">Услуги</a>
@@ -52,7 +52,7 @@
                         <a href="about.html" class="menu__link">О компании</a>
                     </li>
                     <li class="menu__item">
-                        <a href="contacts.html" class="menu__link">Контакты</a>
+                        <a href="contacts.html" class="menu__link current">Контакты</a>
                     </li>
                 </ul>
                 <!--desktop menu-->
@@ -126,84 +126,71 @@
 
     <!--main content-->
     <main class="page__content">
-        <!--categories-->
-        <nav class="b-category">
-            <div class="g-container">
-                <ul class="b-category__list">
-                    <li class="b-category__item">
-                        <a href="publishing.html" class="b-category__link color1">
-                            <span class="b-category__title">Издательство</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-book"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li class="b-category__item">
-                        <a href="stamps.html" class="b-category__link color2">
-                            <span class="b-category__title">Печати и штампы</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-stamp"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li class="b-category__item">
-                        <a href="polygraphy.html" class="b-category__link color3">
-                            <span class="b-category__title">Полиграфи&shy;ческие услуги</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-cmyk"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li class="b-category__item">
-                        <a href="etching.html" class="b-category__link color4">
-                            <span class="b-category__title">Лазерная резка и гравировка</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-lazer"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li class="b-category__item">
-                        <a href="training.html" class="b-category__link">
-                            <span class="b-category__title">Учебный центр</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-learning"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!--/categories-->
+        <!--breadcrumbs-->
+        <div class="g-container">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Главная</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Контакты
+                </li>
+            </ol>
+        </div>
+        <!--/breadcrumbs-->
 
         <!--page content-->
-        <article class="page__section">
+        <section class="page__section page__section--compact" itemscope="" itemtype="http://schema.org/LocalBusiness">
             <div class="g-container">
-                <h1 class="g-title">Наша история</h1>
-                <p>Издательская деятельность начата нами еще в те неспокойные 1995-96 годы. На рынке явно ощущался дефицит правовой информации в сфере финансов и экономики. Поэтому мы приступили к изданию нормативно-правовых актов Министерства финансов. Тем более, что государство тоже ничего подобного не публиковало.</p>
-                <p>Начинали мы с журнала, в котором печатали информацию о страховании, бухучете, финансах и т.д. Потом был дайджест «Экономика и право Казахстана». После того, как дело пошло, мы начали издавать различные книги, посвященные экономической теме.</p>
-                <p><b>Специализация</b>. Подготовка, выпуск и реализация (оптовая и розничная продажа) деловой и юридической литературы, бланков налоговой и финансовой отчетности на территории Республики Казахстан. Выполнение издательско-полиграфических заказов тиражом от одного экземпляра и выше.</p>
-                <p><b>Авторы</b>. С нами сотрудничают ведущие аудиторские компании Казахстана. Авторами издаваемых книг являются известные ученые и юристы Республики Казахстан, а так же преподаватели ВУЗов.</p>
-                <p><b>Секрет успеха</b>. Одним из секретов нашего успеха и популярности на книжном рынке, мы считаем, актуальность, оперативность и читабельность предлагаемого материала. Ежемесячно обновляется литература и выходит несколько новых изданий.</p>
-                <p>Сегодня ТОО «Издательство LEM» выпускает более 150 наименований деловой литературы. Всегда есть в наличии большой ассортимент форм налоговой и финансовой отчетности. Продукция издательства реализуются по всему Казахстану. Нашими клиентами являются все крупные книготорговые фирмы Республики Казахстан. Вся продукция ТОО «Издательство LEM» высокого полиграфического качества!</p>
-                <p>ТОО «Издательство LEM» является членом Ассоциации книгоиздателей и книгораспространителей, членом Алматинской ассоциации предпринимателей, членом Независимой ассоциации предпринимателей, регулярно участвует на книжных ярмарках, проводимых «Алматыкитап» в КЦДС «Атакент», и других значимых мероприятиях. Наша продукция реализуется на всей территории Республики Казахстан.</p>
+                <h1 class="g-title">Контакты</h1>
+
+                <meta itemprop="name" content="ТОО Издательство LEM" />
+                <meta itemprop="description" content="Подготовка, выпуск и реализация деловой и юридической литературы, бланков налоговой и финансовой отчетности на территории Республики Казахстан" />
+
+                <p>
+                    <b>E-mail</b>: <a href="mailto:info@lem.kz"><span itemprop="email">info@lem.kz</span></a>
+                </p>
+                <p>
+                    <b>Телефон:</b> <span itemprop="telephone">8 (727) 375-51-33</span>
+                </p>
+                <p itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                    <b>Адрес:</b> <span itemprop="postalCode">050008</span>, г. <span itemprop="addressLocality">Алматы</span>, <span itemprop="streetAddress">ул. Ауэзова 82</span>, (уг. ул. Мынбаева), ТОО «Издательство LEM»
+                    <meta itemprop="addressCountry" content="Казахстан" />
+                </p>
+
+                <div class="g-map" id="map"></div>
             </div>
-        </article>
+        </section>
         <!--/page content-->
+
+        <!--contacts form-->
+        <section class="page__content">
+            <div class="g-container">
+                <h2 class="g-title">Есть вопрос?</h2>
+                <form id="contactForm">
+                    <div class="row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-input-field">
+                                <label class="g-label" for="user_name">Имя *</label>
+                                <div class="g-validate">
+                                    <input type="text" class="g-input" id="user_name" placeholder="Укажите Ваше имя" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-input-field">
+                                <label class="g-label">Email *</label>
+                                <input type="email" class="g-input" placeholder="Укажите Ваш email" required />
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+        <!--/contacts form-->
     </main>
     <!--/main content-->
 
@@ -255,7 +242,7 @@
                 <label class="m-menu__label">Меню</label>
             </li>
             <li class="m-menu__item">
-                <a href="index.html" class="m-menu__link current">Главная</a>
+                <a href="index.html" class="m-menu__link">Главная</a>
             </li>
             <li class="m-menu__item">
                 <a href="#!" class="m-menu__link">Услуги</a>
@@ -281,7 +268,7 @@
                 <a href="about.html" class="m-menu__link">О компании</a>
             </li>
             <li class="m-menu__item">
-                <a href="contacts.html" class="m-menu__link">Контакты</a>
+                <a href="contacts.html" class="m-menu__link current">Контакты</a>
             </li>
         </ul>
     </div>
@@ -326,5 +313,51 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
     <script src="js/app.min.js"></script>
+
+    <!--map script-->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap,
+            myPlacemark;
+
+        function init() {
+            myMap = new ymaps.Map("map", {
+                center: [43.238391, 76.904664],
+                zoom: 16
+            });
+
+            myMap.behaviors.disable('scrollZoom');
+
+            myPlacemark = new ymaps.Placemark([43.238083, 76.903729], {
+                hintContent: 'Издательство LEM',
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+    <!--/map script-->
+
+    <!--form validate-->
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script>
+        $().ready(function () {
+            $('#contactForm').validate({
+                rules: {
+                    user_name: {
+                        required: true,
+                        minlength: 2
+                    }
+                },
+                messages: {
+                    user_name: {
+                        required: 'Заполните поле!',
+                        minlength:'Не менее 2 символов'
+                    }
+                }
+            });
+        });
+    </script>
+    <!--/form validate-->
 </body>
 </html>

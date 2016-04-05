@@ -10,10 +10,61 @@
         @include font-size(26px);
         color:$title-color;
         background:none !important;
+        @include transition-property(color, transform);
+        @include transition-duration(.3);
 
         &:hover,
         &:focus{
             color:$primary;
+            @include transform(translateY(-3px));
         }
     }
+}
+
+/*Search form*/
+.b-search{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    display:none; //покажем скриптом
+    background:#fff;
+    background:rgba(#fff, .9);
+    z-index:3500;
+
+    .g-container{
+        position:relative;
+    }
+}
+
+.b-search__wrapper{
+    @extend .g-as-table;
+}
+
+.b-search__inner{
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.b-search__title{
+    @extend .g-title;
+    color:$primary;
+}
+
+.b-search__close{
+    @extend .g-clearbutton;
+    @include font-size(36px);
+    color:$primary;
+    position:absolute;
+    top:-36px; right:10px;
+    @include transition(transform .3s ease);
+
+    &:hover{
+        @include transform(translateY(2px));
+    }
+
+    &:focus{
+        @include transform(translateY(5px));
+    }
+
+
 }
