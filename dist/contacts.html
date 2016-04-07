@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Empty Page</title>
+    <title>Contacts Page</title>
     <meta name="description" content="Page Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -170,23 +170,61 @@
             <div class="g-container">
                 <h2 class="g-title">Есть вопрос?</h2>
                 <form id="contactForm">
-                    <div class="row">
+                    <div class="g-row">
                         <div class="g-col g-col--one-half">
-                            <div class="g-input-field">
+                            <div class="g-validate">
                                 <label class="g-label" for="user_name">Имя *</label>
-                                <div class="g-validate">
-                                    <input type="text" class="g-input" id="user_name" placeholder="Укажите Ваше имя" required />
+                                <div class="g-validate__inner g-validate__inner--has-icon">
+                                    <input type="text" class="g-input" id="user_name" name="user_name" placeholder="Укажите Ваше имя" required />
                                 </div>
                             </div>
                         </div>
                         <div class="g-col g-col--one-half">
-                            <div class="g-input-field">
-                                <label class="g-label">Email *</label>
-                                <input type="email" class="g-input" placeholder="Укажите Ваш email" required />
+                            <div class="g-validate">
+                                <label class="g-label" for="user_mail">Email *</label>
+                                <div class="g-validate__inner g-validate__inner--has-icon">
+                                    <input type="email" class="g-input" id="user_mail" name="user_mail" placeholder="Укажите Ваш email" required />
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit">Отправить</button>
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-novalidate">
+                                <label class="g-label" for="user_phone">Телефон</label>
+                                <input type="text" class="g-input js-phone-input" id="user_phone" name="user_phone" placeholder="Укажите Ваш телефон" />
+                            </div>
+                            <!--<div class="g-validate">
+                                <label class="g-label" for="user_phone">Телефон</label>
+                                <div class="g-validate__inner g-validate__inner--has-icon">
+                                    <input type="text" class="g-input js-phone-input" id="user_phone" name="user_phone" placeholder="Укажите Ваш телефон" required />
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-label" for="user_cat">Куда адресован вопрос *</label>
+                                <div class="g-validate__inner g-validate__inner--has-icon">
+                                    <select class="g-select" id="user_cat" name="user_cat" required>
+                                        <option selected disabled>- выберите отдел -</option>
+                                        <option value="1">Издательство</option>
+                                        <option value="2">Учебный центр</option>
+                                        <option value="3">Услуги</option>
+                                        <option value="4">Другое</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="g-validate">
+                        <label class="g-label" for="user_msg">Вопрос *</label>
+                        <div class="g-validate__inner g-validate__inner--has-icon">
+                            <textarea class="g-textarea" id="user_msg" name="user_msg" placeholder="Опишите суть вопроса" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="g-btn g-btn--gray">Отправить</button>
+                    <p>&nbsp;</p>
                 </form>
             </div>
         </section>
@@ -220,15 +258,19 @@
 
     <!--callback modal window-->
     <div class="modal" id="callback">
-        <form class="modal__content">
+        <form class="modal__content" id="callbackForm">
             <span class="modal__title">Заказать бесплатный звонок</span>
-            <div class="g-input-field">
-                <label class="g-label">Имя *</label>
-                <input type="text" class="g-input" placeholder="Введите Ваше имя" required />
+            <div class="g-validate">
+                <label class="g-label" for="call_name">Имя *</label>
+                <div class="g-validate__inner g-validate__inner--has-icon">
+                    <input type="text" class="g-input" id="call_name" name="call_name" placeholder="Введите Ваше имя" required />
+                </div>
             </div>
-            <div class="g-input-field">
-                <label class="g-label">Телефон *</label>
-                <input type="text" class="g-input js-phone-input" placeholder="Введите номер телефона" required />
+            <div class="g-validate">
+                <label class="g-label" for="call_phone">Телефон *</label>
+                <div class="g-validate__inner g-validate__inner--has-icon">
+                    <input type="text" class="g-input js-phone-input" id="call_phone" name="call_phone" placeholder="Введите номер телефона" required />
+                </div>
             </div>
             <button type="submit" class="g-btn"><i class="icomoon-phone"></i>&emsp;Заказать звонок</button>
         </form>
@@ -278,14 +320,15 @@
     <footer class="b-footer">
         <!--subscribe-->
         <div class="b-subscribe">
-            <div class="g-container">
-                <label class="b-subscribe__label">Подписывайтесь на нашу рассылку</label>
-                <div class="g-input-field">
-                    <input type="email" class="b-subscribe__input" placeholder="Введите Ваш email" required />
-                    <!--<label class="error">Этот элемент сгенерирует jquery validate при ошибке</label>-->
+            <form class="g-container" id="subscribeForm">
+                <label class="b-subscribe__label" for="subscribe_mail">Подписывайтесь на нашу рассылку</label>
+                <div class="g-validate">
+                    <div class="g-validate__inner">
+                        <input type="email" class="b-subscribe__input" id="subscribe_mail" name="subscribe_mail" placeholder="Введите Ваш email" required />
+                    </div>
                 </div>
                 <button type="submit" class="b-subscribe__btn">Подписаться</button>
-            </div>
+            </form>
         </div>
         <!--/subscribe-->
 
@@ -342,20 +385,111 @@
     <script src="js/vendor/jquery.validate.min.js"></script>
     <script>
         $().ready(function () {
-            $('#contactForm').validate({
+            $.validator.addMethod("minlenghtphone", function (value, element) {//доп.методы для того чтобы подружить masked input и jquery validate
+                return value.replace(/\D+/g, '').length > 10;
+            },
+            "Укажите корректный номер");
+
+            $.validator.addMethod("requiredphone", function (value, element) {
+                return value.replace(/\D+/g, '').length >1;
+            },
+            "Укажите номер телефона");
+
+            var common = {//стилизация полей - общие правила для всех форм
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass(errorClass).removeClass(validClass);
+                    $(element.form).find("label[for=" + element.id + "]").parent('.g-validate').addClass(errorClass).removeClass(validClass);
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass(errorClass).addClass(validClass);
+                    $(element.form).find("label[for=" + element.id + "]").parent('.g-validate').removeClass(errorClass).addClass(validClass);
+                },
+            };
+
+            var callback = {//правила для формы заявки обратного звонка
+                rules: {
+                    call_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    call_phone: {
+                        requiredphone: true,
+                        minlenghtphone: true
+                    }
+                },
+                messages: {
+                    call_name: {
+                        required: 'Укажите Ваше имя',
+                        minlength: 'Не менее 2 символов'
+                    }
+                },
+            };
+
+            var subscribe = {//правила для формы подписки на новости
+                rules: {
+                    subscribe_mail: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    subscribe_mail: {
+                        required: 'Укажите email',
+                        email: 'Укажите корректный email'
+                    }
+                },
+            };
+
+            var contact = {//правила для контактной формы
                 rules: {
                     user_name: {
                         required: true,
                         minlength: 2
+                    },
+                    user_mail: {
+                        required: true,
+                        email: true
+                    },
+                    //user_phone: {
+                    //    requiredphone: true,
+                    //    minlenghtphone: true
+                    //},
+                    user_cat: {
+                        required: true
+                    },
+                    user_msg: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 180
                     }
                 },
                 messages: {
                     user_name: {
-                        required: 'Заполните поле!',
-                        minlength:'Не менее 2 символов'
+                        required: 'Укажите Ваше имя',
+                        minlength: 'Не менее 2 символов!'
+                    },
+                    user_mail: {
+                        required: 'Укажите Ваш email',
+                        email: 'Введите корректный email'
+                    },
+                    //user_phone: {
+                    //    required: 'Заполните поле!'
+                    //},
+
+                    user_cat: {
+                        required: 'Выберите направление'
+                    },
+                    user_msg: {
+                        required: 'Укажите Ваш вопрос',
+                        minlength: 'Не менее 10 символов',
+                        maxlength: 'Не более 180 символов'
                     }
                 }
-            });
+            };
+
+            $('#callbackForm').validate($.extend(common, callback)); //валидация Заказать обратный звонок
+            $('#subscribeForm').validate($.extend(common, subscribe));//валидация Подписаться на новости
+            $('#contactForm').validate($.extend(common, contact));//валидация контактной формы
         });
     </script>
     <!--/form validate-->

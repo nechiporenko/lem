@@ -80,4 +80,8 @@
     @include media($small){
         @include font-size(24px);
     }
+
+    @include media($desktop){
+        right:36px;
+    }
 }

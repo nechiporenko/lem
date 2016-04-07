@@ -48,14 +48,7 @@ textarea {
         box-shadow:inset 0 0 4px rgba($border-color, .8);
     }
 
-    &.error{
-        border-color:red;
-        box-shadow:inset 0 0 4px rgba(red, .8);
-
-        @include placeholder{
-            color:red;
-        }
-    }
+    
 }
 
 .g-input,
@@ -88,11 +81,32 @@ input[type="radio"] {
 
 
 
+//валидация полей
+.g-validate{
+    .g-input,
+    .g-select,
+    .g-textarea{
+        &.error{//классы для jquery validate
+            border-color:red;
+            box-shadow:inset 0 0 4px rgba(red, .8);
 
-.g-input-field{//обертка для валидации jquery validate
+            @include placeholder{
+                color:red;
+            }
+        }
+
+        &.valid{
+            border-color:$color4;
+            box-shadow:inset 0 0 4px rgba($color4, .8);
+        }
+    }
+}
+.g-validate__inner{//обертка для отображения сообщений валидации jquery validate
     position:relative;
+    line-height:1;
 
-    label.error{
+
+    label.error{//сообщение об ошибке - покажет jquery validate
         display:inline-block;
         min-width:20px;
         max-width:240px;
@@ -103,6 +117,7 @@ input[type="radio"] {
         line-height:1.1;
         position:absolute;
         bottom:100%; right:0;
+        margin-bottom:12px;
         z-index:5;
 
         &:after{
@@ -111,7 +126,58 @@ input[type="radio"] {
             position:absolute;
             right:10px;
             bottom:-8px;
+        }     
+    }
+}
+
+.g-validate__inner--has-icon{
+    &:before,
+    &:after{//иконки статуса valid - error
+        display:none;
+        @include font-size(36px);
+        font-family:'icomoon';
+        position:absolute;
+        right:0; top:0;
+    }
+
+    &:before{
+        content:'\e90d';//valid
+        color:$color4;
+    }
+
+    &:after{
+        content: "\e905";
+        color:red; //error
+    }
+}
+
+@include media($desktop){
+    .g-validate__inner--has-icon{
+        padding-right:70px;
+
+        label.error{
+            right:70px;
         }
-        
+    }
+
+
+    .g-novalidate{ //обертка для полей, которые не требуют валидации - нужна для того чтобы был одинаковый отступ справа
+        padding-right:70px; 
+    }
+
+    .g-validate.valid{
+        .g-validate__inner--has-icon{
+            &:before{
+                display:block;
+            }
+        }
+    }
+
+    .g-validate.error{
+        .g-validate__inner--has-icon{
+            &:after{
+                display:block;
+            }
+        }
     }
 }

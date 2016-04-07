@@ -56,7 +56,7 @@
     padding:0 10px;
     position:absolute;
     top:75px;
-    font-weight:600;
+    //font-weight:600;
     box-sizing:border-box;
 }
 
@@ -80,5 +80,9 @@
     width:100%;
     @include font-size(36px);
     position:absolute;
-    top:144px;
+    top:140px;
+
+    img, i{
+        vertical-align:middle;
+    }
 }

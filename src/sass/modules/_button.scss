@@ -30,8 +30,8 @@
     color:#fff !important;
     text-align: center;
     @include font-size($project-font-size);
-    font-family:$font-sans;
-    font-weight:600;
+    //font-family:$font-sans;
+    //font-weight:600;
     text-decoration: none;
     text-transform:uppercase;
     white-space: nowrap;
@@ -74,5 +74,24 @@
 
     &.color4{
         background-color:$color4;
+    }
+
+
+    &:disabled,
+    &.disabled{
+        background-color:$text-color;
+        box-shadow:none;
+        cursor:default;
+    }
+}
+
+.g-btn--gray{
+    background-color:#bcbcbc;
+}
+
+
+.g-btn--wide{
+    @include media($tablet){
+        padding:0 70px;
     }
 }

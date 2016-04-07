@@ -1,0 +1,30 @@
+﻿@import "../../modules/_base.scss";
+/*Page menu*/
+.p-menu{
+    list-style-type:none;
+    padding:0;
+    margin:7px 0;
+    font-size:0;
+}
+
+.p-menu__item{
+    display:block;
+    @include font-size(14px);
+    margin-right:30px;
+    margin-bottom:5px;
+
+    &:last-child{
+        margin-right:0;
+    }
+
+    @include media($mobile){
+        display:inline-block;
+        vertical-align:top;
+    }
+}
+
+.p-menu__link{
+    @extend .menu__link;
+    padding-left:0;
+    padding-right:0;
+}

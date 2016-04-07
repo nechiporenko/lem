@@ -32,7 +32,7 @@
                         <a href="#!" class="menu__link">Услуги</a>
                         <ul class="submenu">
                             <li class="submenu__item">
-                                <a href="publishing.html" class="submenu__link">Издательство</a>
+                                <a href="publishing.html" class="submenu__link">Издатель&shy;ство</a>
                             </li>
                             <li class="submenu__item">
                                 <a href="stamps.html" class="submenu__link">Печати и штампы</a>
@@ -233,15 +233,19 @@
 
     <!--callback modal window-->
     <div class="modal" id="callback">
-        <form class="modal__content">
+        <form class="modal__content" id="callbackForm">
             <span class="modal__title">Заказать бесплатный звонок</span>
-            <div class="g-input-field">
-                <label class="g-label">Имя *</label>
-                <input type="text" class="g-input" placeholder="Введите Ваше имя" required />
+            <div class="g-validate">
+                <label class="g-label" for="call_name">Имя *</label>
+                <div class="g-validate__inner g-validate__inner--has-icon">
+                    <input type="text" class="g-input" id="call_name" name="call_name" placeholder="Введите Ваше имя" required />
+                </div>
             </div>
-            <div class="g-input-field">
-                <label class="g-label">Телефон *</label>
-                <input type="text" class="g-input js-phone-input" placeholder="Введите номер телефона" required />
+            <div class="g-validate">
+                <label class="g-label" for="call_phone">Телефон *</label>
+                <div class="g-validate__inner g-validate__inner--has-icon">
+                    <input type="text" class="g-input js-phone-input" id="call_phone" name="call_phone" placeholder="Введите номер телефона" required />
+                </div>
             </div>
             <button type="submit" class="g-btn"><i class="icomoon-phone"></i>&emsp;Заказать звонок</button>
         </form>
@@ -291,14 +295,15 @@
     <footer class="b-footer">
         <!--subscribe-->
         <div class="b-subscribe">
-            <div class="g-container">
-                <label class="b-subscribe__label">Подписывайтесь на нашу рассылку</label>
-                <div class="g-input-field">
-                    <input type="email" class="b-subscribe__input" placeholder="Введите Ваш email" required />
-                    <!--<label class="error">Этот элемент сгенерирует jquery validate при ошибке</label>-->
+            <form class="g-container" id="subscribeForm">
+                <label class="b-subscribe__label" for="subscribe_mail">Подписывайтесь на нашу рассылку</label>
+                <div class="g-validate">
+                    <div class="g-validate__inner">
+                        <input type="email" class="b-subscribe__input" id="subscribe_mail" name="subscribe_mail" placeholder="Введите Ваш email" required />
+                    </div>
                 </div>
                 <button type="submit" class="b-subscribe__btn">Подписаться</button>
-            </div>
+            </form>
         </div>
         <!--/subscribe-->
 
@@ -326,5 +331,70 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
     <script src="js/app.min.js"></script>
+
+    <!--form validate-->
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script>
+        $().ready(function () {
+            $.validator.addMethod("minlenghtphone", function (value, element) {//доп.методы для того чтобы подружить masked input и jquery validate
+                return value.replace(/\D+/g, '').length > 10;
+            },
+            "Укажите корректный номер");
+
+            $.validator.addMethod("requiredphone", function (value, element) {
+                return value.replace(/\D+/g, '').length > 1;
+            },
+            "Укажите номер телефона");
+
+            var common = {//стилизация полей - общие правила для всех форм
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass(errorClass).removeClass(validClass);
+                    $(element.form).find("label[for=" + element.id + "]").parent('.g-validate').addClass(errorClass).removeClass(validClass);
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass(errorClass).addClass(validClass);
+                    $(element.form).find("label[for=" + element.id + "]").parent('.g-validate').removeClass(errorClass).addClass(validClass);
+                },
+            };
+
+            var callback = {//правила для формы заявки обратного звонка
+                rules: {
+                    call_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    call_phone: {
+                        requiredphone: true,
+                        minlenghtphone: true
+                    }
+                },
+                messages: {
+                    call_name: {
+                        required: 'Укажите Ваше имя',
+                        minlength: 'Не менее 2 символов'
+                    }
+                },
+            };
+
+            var subscribe = {//правила для формы подписки на новости
+                rules: {
+                    subscribe_mail: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    subscribe_mail: {
+                        required: 'Укажите email',
+                        email: 'Укажите корректный email'
+                    }
+                },
+            };
+
+            $('#callbackForm').validate($.extend(common, callback)); //валидация Заказать обратный звонок
+            $('#subscribeForm').validate($.extend(common, subscribe));//валидация Подписаться на новости
+        });
+    </script>
+    <!--/form validate-->
 </body>
 </html>
