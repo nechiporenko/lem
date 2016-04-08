@@ -32,12 +32,17 @@
 
 @include media($desktop){//прибьем футер к низу страницы
     .page{
-        padding-bottom:$footer-height;
+        padding-bottom:$footer-height + 36px;
     }
     .b-footer{
         position:absolute;
         height:$footer-height;
         left:0;
         bottom:0;
+        overflow:hidden;
+    }
+
+    .b-footer--has-menu{
+        height:$footer-height + 36px;
     }
 }

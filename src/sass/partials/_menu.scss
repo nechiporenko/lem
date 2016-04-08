@@ -1,5 +1,6 @@
 ﻿@import "../modules/_base.scss";
 
 @import "menu/_desktop-menu.scss";
-@import "menu/_page-menu.scss";
+@import "menu/_page-menu.scss";//доп.меню на страницах
 @import "menu/_mobile-menu.scss";
+@import "menu/_footer-menu.scss";//доп.меню в футере на страницах учебного центра
