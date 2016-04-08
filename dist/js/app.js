@@ -50,6 +50,7 @@
 // Маска для телефонного номера
 // Модальное окно
 // Слайдер
+// Вкладки
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -264,6 +265,51 @@ jQuery(document).ready(function ($) {
     }
     if ($('.js-slider').length) { initSlider();}
     
+
+    //
+    // Вкладки
+    //---------------------------------------------------------------------------------------
+    function initTabs() {
+        var $list = $('.js-tabs'),
+            $content = $('.js-tabs-content > div'),
+            method = {};
+
+        method.init = (function () {//спрячем "лишние" вкладки
+            $content.hide()
+            $list.each(function () {
+                var current = $(this).find('li.current');
+                if (current.length < 1) { $(this).find('li:first').addClass('current'); }
+                current = $(this).find('li.current a').attr('href');
+                $(current).show();
+            });
+        })();
+
+        method.show = function (el) {//обработка клика по вкладке
+            var $tabs = el.parents('ul').find('li');
+            var tab_next = el.attr('href');
+            var tab_current = $tabs.filter('.current').find('a').attr('href');
+            $(tab_current).hide();
+            $tabs.removeClass('current');
+            el.parent().addClass('current');
+            $(tab_next).fadeIn();
+            history.pushState(null, null, window.location.search + el.attr('href'));
+        };
+
+
+        $list.on('click', 'a[href^="#"]', function (e) {//клик по вкладке
+            e.preventDefault();
+            method.show($(this));
+        });
+
+        method.parsing = (function () {//парсим линк и открываем нужную вкладку при загрузке
+            var hash = window.location.hash;
+            if (hash) {
+                var selectedTab = $list.find('a[href="' + hash + '"]');
+                selectedTab.trigger('click', true);
+            };
+        })();
+    };
+    if ($('.js-tabs').length) { initTabs(); }
     
     
 });

@@ -18,6 +18,44 @@
         @include span-columns(3);
         @include omega(4n);
     }
+
+
+    &:nth-child(5n+1){
+        .service-list__link{
+            &:hover,
+            &:active{
+                background:$color1;
+            }
+        }
+
+    }
+    &:nth-child(5n+2){
+        .service-list__link{
+            &:hover,
+            &:active{
+                background:$color2;
+            }
+        }
+
+    }
+    &:nth-child(5n+3){
+        .service-list__link{
+            &:hover,
+            &:active{
+                background:$color3;
+            }
+        }
+
+    }
+    &:nth-child(5n+4){
+        .service-list__link{
+            &:hover,
+            &:active{
+                background:$color4;
+            }
+        }
+
+    }
 }
 
 .service-list__inner{
@@ -25,7 +63,7 @@
     margin:0 auto $project-line-height;
     position:relative;
 
-    &:after{
+    &:after{//тень
         content:"";
         position:absolute;
         z-index:-2;
@@ -63,36 +101,43 @@
     @include transition-duration(.2s);
 
     &:hover,
-    &:active{
+    &:active{//дефолтное 
         background:$primary;
         color:#fff;
     }
 
-    &.color1{
+    &.color1{//если потребуется указать другие цвета (перебить стили списка)
         &:hover,
         &:active{
-            background:$color1;
+            background:$color1 !important;
         }
     }
 
     &.color2{
         &:hover,
         &:active{
-            background:$color2;
+            background:$color2 !important;
         }
     }
 
     &.color3{
         &:hover,
         &:active{
-            background:$color3;
+            background:$color3 !important;
         }
     }
 
     &.color4{
         &:hover,
         &:active{
-            background:$color4;
+            background:$color4 !important;
+        }
+    }
+
+    &.color5{
+        &:hover,
+        &:active{
+            background:$primary !important;
         }
     }
 }

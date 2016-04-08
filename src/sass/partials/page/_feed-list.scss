@@ -1,0 +1,86 @@
+﻿@import "../../modules/_base.scss";
+/*Feed list*/
+.feed{
+    list-style-type:none;
+    padding:0;
+}
+
+.feed__item{
+    display:block;
+    padding-bottom:$project-line-height;
+}
+    
+
+.feed__inner{
+    @extend .g-clearfix;
+}
+
+.feed__thumb{
+    display:block;
+    width:220px;
+    height:144px;
+    position:relative;
+    overflow:hidden;
+
+    &:hover,
+    &:active{
+        .feed__img{
+            @include transform(scale(1.2));
+        }
+    }
+}
+
+.feed__img{
+    @extend .g-img-centered;
+    @include transition(transform .3s ease-out);
+    @include backface-visibility(hidden);
+}
+
+.feed__content{
+    padding-top:$project-line-height/2;
+
+    p{
+        margin-bottom:$project-line-height/2;
+    }
+}
+
+.feed__title{
+    @extend .g-subtitle;
+    text-decoration:none;
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+.feed__btn{
+    display:block;
+    width:74px;
+    height:24px;
+    line-height:20px;
+    border:1px solid $primary;
+    text-align:center;
+    text-decoration:none;
+    background:#fff;
+    color:$primary;
+    @include font-size(22px);
+    box-sizing:border-box;
+
+    &:hover,
+    &:active{
+        background:$primary;
+        color:#fff;
+    }
+}
+
+@include media($tablet){
+    .feed__thumb{
+        float:left;
+    }
+
+    .feed__content{
+        padding-top:0;
+        margin-left:240px;
+    }
+}

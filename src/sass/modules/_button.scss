@@ -23,11 +23,11 @@
 .g-btn{
     display:inline-block;
     vertical-align:middle;
-    @include px2rem(margin-bottom, $project-line-height);
-    @include px2rem(height, 36px);
-    @include px2rem(line-height, 36px);
-    @include px2rem(padding, 0 30px);
-    color:#fff !important;
+    margin-bottom:$project-line-height;
+    height:36px;
+    line-height:36px;
+    padding:0 30px;
+    color:#fff;
     text-align: center;
     @include font-size($project-font-size);
     //font-family:$font-sans;
@@ -35,17 +35,18 @@
     text-decoration: none;
     text-transform:uppercase;
     white-space: nowrap;
-    background-color:$primary;
+    background:$primary;
     border: none;
     cursor: pointer;
     box-sizing: border-box;
-    @include transition-property(background-color, color, box-shadow, transform);
+    @include transition-property(background, color, box-shadow, transform);
     @include transition-duration(.3s);
     @include transition-timing-function(ease-in);
 
     &:hover,
     &:focus,
     &:active{
+        color:#fff;
         box-shadow:inset 3px 3px 30px rgba(#000, .12), 0 3px 6px rgba(#000, .25);
         outline:0;
     }
@@ -56,42 +57,74 @@
 
 
     &.color1{
-        background-color:$color1;
+        background:$color1;
     }
 
     &.color2{
-        background-color:$color2;
+        background:$color2;
     }
 
     &.color3{
-        background-color:$color3;
+        background:$color3;
     }
 
     &.color2,
     &.color3{
-        color:$title-color !important;
+        color:$title-color;
+
+        &:hover,
+        &:active,
+        &:focus{
+            color:$title-color;
+        }
     }
 
     &.color4{
-        background-color:$color4;
+        background:$color4;
     }
 
 
     &:disabled,
     &.disabled{
-        background-color:$text-color;
+        background:$text-color;
         box-shadow:none;
         cursor:default;
     }
 }
 
 .g-btn--gray{
-    background-color:#bcbcbc;
+    background:#bcbcbc;
 }
 
 
 .g-btn--wide{
     @include media($tablet){
         padding:0 70px;
+    }
+}
+
+.g-btn--title{
+    height:26px;
+    padding:0;
+    margin-bottom:15px;
+    line-height:26px;
+    background:none;
+    color:$title-color;
+    box-shadow:none;
+    
+    [class^="icomoon-"], [class*=" icomoon-"]{
+        font-size:120%;
+    }
+
+    &:hover,
+    &:active,
+    &:focus{
+        color:$primary;
+        background:none;
+        box-shadow:none;
+    }
+
+    @include media($tablet){
+        float:right;
     }
 }

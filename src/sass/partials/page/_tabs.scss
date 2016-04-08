@@ -1,0 +1,42 @@
+﻿@import "../../modules/_base.scss";
+/*Tabs*/
+.tabs{
+    @extend .g-clearlist;
+    font-size:0;
+    line-height:1;
+}
+
+.tabs__item{
+    display:inline-block;
+    @include font-size(14px);
+    margin:0 25px 14px 0;
+
+    &.current{
+        .tabs__link{
+            color:$text-color;
+            border-bottom-color:$text-color;
+            cursor:default;
+        }
+    }
+
+    &:last-child{
+        margin-right:0;
+    }
+}
+
+.tabs__link{
+    display:inline-block;
+    padding:5px 2px;
+    border-bottom:1px dashed #fff;
+    border-top:1px dashed #fff;
+    box-sizing:border-box;
+    color:$primary;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:600;
+
+    &:hover,
+    &:active{
+        color:$title-color;
+    }
+}

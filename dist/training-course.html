@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home Page</title>
+    <title>Training Center - Single Course Page</title>
     <meta name="description" content="Page Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -21,18 +21,18 @@
         <nav class="b-header__inner">
             <div class="g-container">
                 <!--logo-->
-                <a href="index.html" class="b-header__logo">Издательство LEM</a>
+                <a href="index.html" class="b-header__logo b-header__logo--training">Издательство LEM</a>
                 <!--/logo-->
                 <!--desktop menu-->
                 <ul class="menu js-menu">
                     <li class="menu__item">
-                        <a href="index.html" class="menu__link current">Главная</a>
+                        <a href="index.html" class="menu__link">Главная</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#!" class="menu__link">Услуги</a>
+                        <a href="#!" class="menu__link current">Услуги</a>
                         <ul class="submenu">
                             <li class="submenu__item">
-                                <a href="publishing.html" class="submenu__link">Издатель&shy;ство</a>
+                                <a href="publishing.html" class="submenu__link">Издательство</a>
                             </li>
                             <li class="submenu__item">
                                 <a href="stamps.html" class="submenu__link">Печати и штампы</a>
@@ -44,16 +44,16 @@
                                 <a href="etching.html" class="submenu__link">Лазерная резка и гравировка</a>
                             </li>
                             <li class="submenu__item">
-                                <a href="training.html" class="submenu__link">Учебный центр</a>
+                                <a href="training.html" class="submenu__link current">Учебный центр</a>
                             </li>
                         </ul>
                     </li>
                     <li class="menu__item">
                         <a href="about.html" class="menu__link">О компании</a>
                     </li>
-                    <li class="menu__item">
+                    <!--<li class="menu__item">
                         <a href="contacts.html" class="menu__link">Контакты</a>
-                    </li>
+                    </li>-->
                 </ul>
                 <!--desktop menu-->
                 <!--right header section-->
@@ -65,7 +65,7 @@
                     </a>-->
                     <!--/cart link-->
                     <!--search btn-->
-                    <!--<button type="button" class="b-header__search" data-searchform><i class="icomoon-search"></i></button>-->
+                    <button type="button" class="b-header__search" data-searchform><i class="icomoon-search"></i></button>
                     <!--/search btn-->
                     <!--header phones-->
                     <button class="b-header__btn b-header__btn--callback" data-modal="#callback"><i class="icomoon-phone"></i></button>
@@ -126,84 +126,196 @@
 
     <!--main content-->
     <main class="page__content">
-        <!--categories-->
-        <nav class="b-category">
+        <!--breadcrumbs-->
+        <div class="g-container">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Главная</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="training.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Учебный центр</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="training-courses.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Все курсы</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Название курса
+                </li>
+            </ol>
+        </div>
+        <!--/breadcrumbs-->
+
+        <!--page menu-->
+        <nav class="g-container">
+            <ul class="p-menu">
+                <li class="p-menu__item">
+                    <a href="training-about.html" class="p-menu__link">О центре</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="training-courses.html" class="p-menu__link current">Все курсы</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="training-shedule.html" class="p-menu__link">Расписание</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="training-teachers.html" class="p-menu__link">Преподаватели</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="training-sale.html" class="p-menu__link">Акции и скидки</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="training-contacts.html" class="p-menu__link">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <!--/page menu-->
+
+        <!--course preview-->
+        <article class="page__section page__section--compact">
             <div class="g-container">
-                <ul class="b-category__list">
-                    <li class="b-category__item">
-                        <a href="publishing.html" class="b-category__link">
-                            <span class="b-category__title">Издательство</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-book"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
+                <h1 class="g-title">Название курса</h1>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            </div>
+        </article>
+        <!--/course preview-->
+
+        <!--course summary-->
+        <div class="g-container">
+            <a href="training-registration.html" class="g-btn g-btn--wide">Записаться на курсы</a>
+            <dl class="g-description-list">
+                <dt>Стоимость курса:</dt>
+                <dd>8 549 тенге</dd>
+                <dt>Продолжительность:</dt>
+                <dd>2 месяца</dd>
+                <dt>Начало курса:</dt>
+                <dd>15 апреля 2016 в 19:00</dd>
+                <dt>Место проведения:</dt>
+                <dd>л. Ауэзова, 82, офис 15 (вход через арку со двора)</dd>
+            </dl>
+        </div>
+        <!--/course summary-->
+
+        <!--teacher info-->
+        <article class="page__section">
+            <div class="g-container">
+                <img src="img/del/teacher.jpg" class="g-img-left" alt="Teacher" />
+                <h2 class="g-title">Фамилия Имя</h2>
+                <p><b>Специализация</b></p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            </div>
+        </article>
+        <!--teacher info-->
+
+        <!--proiducts-->
+        <section class="page__section">
+            <div class="g-container">
+                <h3 class="g-subtitle">Рекомендуемая литература</h3>
+                <ul class="product-list product-list--full">
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Вопрос на засыпку. Как заставить мозги шевелиться</a>
+                                    Джон Фарндон
+                                </div>
+                                <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
                     </li>
-                    <li class="b-category__item">
-                        <a href="stamps.html" class="b-category__link">
-                            <span class="b-category__title">Печати и штампы</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-stamp"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">MBA в кармане. Практическое руководство по развитию к...</a>
+                                    Барри Пирсон
+                                </div>
+                                <span class="b-product__price">520 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
                     </li>
-                    <li class="b-category__item">
-                        <a href="polygraphy.html" class="b-category__link">
-                            <span class="b-category__title">Полиграфи&shy;ческие услуги</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-cmyk"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Сто лет одиночества</a>
+                                    Габриэль Гарсиа Маркес
+                                </div>
+                                <span class="b-product__price">67 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
                     </li>
-                    <li class="b-category__item">
-                        <a href="etching.html" class="b-category__link">
-                            <span class="b-category__title">Лазерная резка и гравировка</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-lazer"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Смотритель. В 2 томах. Том 2. Железная бездна</a>
+                                    Виктор Пелевин
+                                </div>
+                                <span class="b-product__price">1 199 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
                     </li>
-                    <li class="b-category__item">
-                        <a href="training.html" class="b-category__link">
-                            <span class="b-category__title">Учебный центр</span>
-                            <span class="b-category__icon">
-                                <i class="icomoon-learning"></i>
-                            </span>
-                            <span class="b-category__btn">
-                                <i class="icomoon-arrow-right"></i>
-                            </span>
-                        </a>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Специи и приправы. Сделай вкус любого блюда неповтори...</a>
+                                </div>
+                                <span class="b-product__price">41 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Сын террориста</a>
+                                    Зак Ибрагим
+                                </div>
+                                <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
                     </li>
                 </ul>
             </div>
-        </nav>
-        <!--/categories-->
-
-        <!--page content-->
-        <article class="page__section">
-            <div class="g-container">
-                <h1 class="g-title">Наша история</h1>
-                <p>Издательская деятельность начата нами еще в те неспокойные 1995-96 годы. На рынке явно ощущался дефицит правовой информации в сфере финансов и экономики. Поэтому мы приступили к изданию нормативно-правовых актов Министерства финансов. Тем более, что государство тоже ничего подобного не публиковало.</p>
-                <p>Начинали мы с журнала, в котором печатали информацию о страховании, бухучете, финансах и т.д. Потом был дайджест «Экономика и право Казахстана». После того, как дело пошло, мы начали издавать различные книги, посвященные экономической теме.</p>
-                <p><b>Специализация</b>. Подготовка, выпуск и реализация (оптовая и розничная продажа) деловой и юридической литературы, бланков налоговой и финансовой отчетности на территории Республики Казахстан. Выполнение издательско-полиграфических заказов тиражом от одного экземпляра и выше.</p>
-                <p><b>Авторы</b>. С нами сотрудничают ведущие аудиторские компании Казахстана. Авторами издаваемых книг являются известные ученые и юристы Республики Казахстан, а так же преподаватели ВУЗов.</p>
-                <p><b>Секрет успеха</b>. Одним из секретов нашего успеха и популярности на книжном рынке, мы считаем, актуальность, оперативность и читабельность предлагаемого материала. Ежемесячно обновляется литература и выходит несколько новых изданий.</p>
-                <p>Сегодня ТОО «Издательство LEM» выпускает более 150 наименований деловой литературы. Всегда есть в наличии большой ассортимент форм налоговой и финансовой отчетности. Продукция издательства реализуются по всему Казахстану. Нашими клиентами являются все крупные книготорговые фирмы Республики Казахстан. Вся продукция ТОО «Издательство LEM» высокого полиграфического качества!</p>
-                <p>ТОО «Издательство LEM» является членом Ассоциации книгоиздателей и книгораспространителей, членом Алматинской ассоциации предпринимателей, членом Независимой ассоциации предпринимателей, регулярно участвует на книжных ярмарках, проводимых «Алматыкитап» в КЦДС «Атакент», и других значимых мероприятиях. Наша продукция реализуется на всей территории Республики Казахстан.</p>
-            </div>
-        </article>
-        <!--/page content-->
+        </section>
+        <!--/proiducts-->
     </main>
     <!--/main content-->
 
@@ -259,10 +371,10 @@
                 <label class="m-menu__label">Меню</label>
             </li>
             <li class="m-menu__item">
-                <a href="index.html" class="m-menu__link current">Главная</a>
+                <a href="index.html" class="m-menu__link">Главная</a>
             </li>
             <li class="m-menu__item">
-                <a href="#!" class="m-menu__link">Услуги</a>
+                <a href="#!" class="m-menu__link current">Услуги</a>
                 <ul class="m-submenu">
                     <li class="m-submenu__item">
                         <a href="publishing.html" class="m-submenu__link">Издательство</a>
@@ -277,7 +389,7 @@
                         <a href="etching.html" class="m-submenu__link">Лазерная резка и гравировка</a>
                     </li>
                     <li class="m-submenu__item">
-                        <a href="training.html" class="m-submenu__link">Учебный центр</a>
+                        <a href="training.html" class="m-submenu__link current">Учебный центр</a>
                     </li>
                 </ul>
             </li>

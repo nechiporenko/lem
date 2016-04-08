@@ -79,14 +79,18 @@ h1, h2, h3, h4, h5, h6, .g-title, .g-subtitle{
   //font-weight:400;
   font-weight:600;
 }
-.g-title{
+.g-title,
+.g-subtitle{
     display:block;
+}
+
+.g-title, h1{
     @include font-size(24px);
 }
 
-.g-subtitle{
-    display:block;
+.g-subtitle, h2{
     @include font-size(21px);
+    margin-bottom:$project-line-height;
 }
 
 .g-brand-color{
@@ -111,6 +115,27 @@ ul ol,
 ol ol,
 ol ul {
     @include px2rem(margin, $project-line-height/2 0 $project-line-height/2 30px);
+}
+
+.g-description-list{
+    padding:0;
+    margin:$project-line-height 0;
+
+
+    dt, dd{
+        float:left;
+        margin-bottom:$project-line-height;
+    }
+
+    dt{
+        margin-right:15px;
+        clear:both;
+        color:$title-color;
+        text-shadow:0 0 .1px rgba($title-color, .5);
+    }
+    dd{
+        margin-left:0;
+    }
 }
 
 .g-clearlist{

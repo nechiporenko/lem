@@ -1,0 +1,37 @@
+﻿@import "../../modules/_base.scss";
+/*Product List*/
+
+.product-list{
+    list-style-type:none;
+    padding:0;
+    @extend .g-clearfix;
+}
+
+.product-list__item{
+    @extend .g-column;
+    @include span-columns(6);
+    @include omega(2n);
+
+    @include media($mobile){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+
+    @include media($tablet){
+        @include omega-reset(3n);
+        @include span-columns(3);
+        @include omega(4n);
+    }
+}
+
+.product-list--full{
+    .product-list__item{
+        @include media($desktop){
+            @include omega-reset(4n);
+            @include span-columns(2);
+            @include omega(6n);
+        }
+    }
+}
+
