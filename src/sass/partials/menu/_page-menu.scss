@@ -1,9 +1,13 @@
 ﻿@import "../../modules/_base.scss";
 /*Page menu*/
+.page__menu{
+    @extend .g-container;
+}
 .p-menu{
+    display:none;
     list-style-type:none;
     padding:0;
-    margin:17px 0 9px;
+    margin:0 0 $project-line-height/2;
     font-size:0;
     line-height:1;
 }
@@ -11,21 +15,139 @@
 .p-menu__item{
     display:block;
     @include font-size(14px);
-    margin-right:30px;
-    margin-bottom:5px;
-
-    &:last-child{
-        margin-right:0;
-    }
-
-    @include media($mobile){
-        display:inline-block;
-        vertical-align:top;
-    }
+    border-bottom:1px solid $border-color;
+    position:relative;
 }
 
 .p-menu__link{
     @extend .menu__link;
-    padding-left:0;
-    padding-right:0;
+    display:block;
+    padding:10px 0;
+
+    &.current{
+        border-bottom-color:#fff;
+    }
+}
+
+.p-menu__button{//кнопка вызова меню для мобильных
+    display:block;
+    width:100%;
+    height:36px;
+    margin:$project-line-height/2 0;
+    padding:0 10px;
+    line-height:36px;
+    color:$title-color;
+    font-weight:600;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    text-transform:uppercase;
+    background:#f9f9f9;
+    border:none;
+    outline:0;
+    text-align:left;
+    cursor:pointer;
+
+    [class^="icomoon-"], [class*=" icomoon-"]{
+        margin-right:10px;
+        font-size:22px;
+    }
+
+    &.active{
+        color:$primary;
+    }
+}
+
+/*Page submenu*/
+.p-submenu{
+    display:none;
+    @extend .g-clearlist;
+    background:#fff;
+}
+
+.p-submenu__item{
+    display:block;
+    padding:0 10px;
+    border-top:1px solid $border-color;
+}
+
+.p-submenu__link{
+    @extend .submenu__link;
+    line-height:1.2;
+    padding:10px 10px 10px 20px;
+    position:relative;
+}
+
+
+@include media($desktop){
+    .p-menu{
+        display:block;
+        margin-top:17px;
+    }
+
+    .p-menu__item{
+        display:inline-block;
+        margin-right:30px;
+        margin-bottom:5px;
+        border-bottom:none;
+        vertical-align:top;
+
+        &:last-child{
+            margin-right:0;
+        }
+    }
+
+    .p-menu__link{
+        padding:0 0 6px;
+        &.current{
+            border-bottom-color:$primary;
+        }
+    }
+
+    .p-menu__button{
+        display:none;
+    }
+
+    .p-submenu{
+        padding:10px 0;
+        position:absolute;
+        min-width:200px;
+        top:100%;
+        left:-10px;
+        z-index:1000;
+        box-shadow:-3px 3px 6px -2px rgba(#000, .2), 1px 1px 2px -1px rgba(#000, .1);
+    }
+
+    .p-submenu__item{
+        border:none;
+    }
+
+    .p-submenu__link{
+        padding:10px 0;
+    }
+}
+
+
+
+.no-js{
+    .p-menu__button{
+        display:none;
+    }
+    .p-menu{
+        display:block;
+    }
+
+    .p-submenu{
+        display:block;
+        @include media($desktop){
+            display:none;
+        }
+    }
+
+    .p-menu__item{
+        &:hover{
+            & > .p-submenu{
+                display:block;
+            }
+        }
+    }
 }

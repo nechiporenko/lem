@@ -1,6 +1,7 @@
 // Application Scripts:
 
 // Десктоп меню (выпадайки)
+// Доп.меню на странице
 // Мобильное меню
 // Стилизуем хидер при скролле
 // Форма поиска
@@ -25,7 +26,7 @@ jQuery(document).ready(function ($) {
     //---------------------------------------------------------------------------------------
     (function () {
         var $menu = $('.js-menu li');
-        //$menu.has('ul').children('a').append('&nbsp;<i class="icomoon-dropdown"></i>').addClass('has-menu');
+        $menu.has('ul').children('a').addClass('has-menu');
         $menu.on({
             mouseenter: function () {
                 $(this).find('ul:first').stop(true, true).fadeIn('fast');
@@ -40,6 +41,119 @@ jQuery(document).ready(function ($) {
             e.preventDefault();
         });
     })();
+
+
+    //
+    // Доп.меню на странице
+    //---------------------------------------------------------------------------------------
+    function initPageMenu() {
+        var $menu = $('.js-p-menu > ul'),
+            $submenu = $menu.children('li').children('ul'),
+            $btn = $menu.children('li').has('ul').addClass('has-menu').children('a').addClass('has-menu'),
+            $toggle = $('.js-p-menu-toggle'),
+            BREAKPOINT = 992,
+            rtime, //переменные для пересчета ресайза окна с задержкой delta
+            timeout = false,
+            delta = 200,
+            method = {};
+
+        
+
+        method.hideAllSubMenu = function () {//при клике по заголовку не активного меню, сперва спрячем все субменю
+            var winW = $.viewportW();//ширина окна браузера
+            $btn.removeClass('active');
+            $submenu.slideUp(200);
+        };
+
+        method.hideSubMenu = function(el, target) {
+            target.slideUp(200);
+            el.removeClass('active');
+        };
+
+        method.showSubMenu = function (el, target) {
+            target.slideDown(200);
+            el.addClass('active');
+        };
+
+        method.hideMenu = function () {
+            $toggle.removeClass('active');
+            $menu.slideUp(200);
+            method.hideAllSubMenu();
+        };
+
+        method.showMenu = function () {
+            $toggle.addClass('active');
+            $menu.slideDown(200);
+        };
+
+        method.clickSubMenuHeader = function (e) {//клик по заголовку субменю
+            e.preventDefault();
+            var $el = $(this),
+                $target = $el.parent('li').find('ul:first');
+            if ($el.hasClass('active')) {
+                method.hideSubMenu($el, $target);
+            } else {
+                //method.hideAllSubMenu(); //если нужно показывать раскрытым только одно суб-меню - расскоментировать
+                method.showSubMenu($el, $target);
+            };
+        };
+
+        method.clickToggleButton = function () {//клик по кнопке меню на мобильных
+            if ($toggle.hasClass('active')) {
+                method.hideMenu();
+            } else {
+                method.showMenu();
+            }
+        };
+
+        method.checkRezolution = function () {//если изменилось разрешение экрана - сбрасываем
+            var winW = $.viewportW();//ширина экрана
+            if (winW >= BREAKPOINT) {
+                method.hideAllSubMenu();
+                $toggle.removeClass('active');
+                $menu.show();
+            };
+        };
+
+        method.endResize = function () {
+            if (new Date() - rtime < delta) {
+                setTimeout(method.endResize, delta);
+            } else {
+                timeout = false;
+                //ресайз окончен - проверяем
+                method.checkRezolution();
+            }
+        };
+
+        method.startResize = function () {
+            rtime = new Date();
+            if (timeout === false) {
+                timeout = true;
+                setTimeout(method.endResize, delta);
+            }
+        };
+
+        
+        $toggle.bind('click', method.clickToggleButton);//начинаем отслеживать клик по кнопке меню на мобильных
+        $btn.bind('click', method.clickSubMenuHeader); //начинаем отслеживать клик по заголовкам субменю
+        $window.bind('resize', method.startResize);//если переходим на десктоп - сбрасывем на дефолт
+
+        $menu.find('li.has-menu').hover(function () {//на десктопе будем показывать субменю при наведении мышки
+            var winW = $.viewportW();//ширина экрана
+            if (winW >= BREAKPOINT) {
+                $btn.unbind('click', method.clickSubMenuHeader).on('click', function (e) { e.preventDefault(); });//отключаем обработку клика, но оставляем заголовок некликабельным
+                $(this).children('a').addClass('hover').next('ul:first').fadeIn(200);
+            };
+        }, function () {
+            var winW = $.viewportW();
+            if (winW >= BREAKPOINT) {
+                $(this).children('a').removeClass('hover').next('ul:first').hide();
+                $btn.bind('click', method.clickSubMenuHeader);
+            };
+        });
+
+    };
+    if ($('.js-p-menu').length) { initPageMenu();}
 
     //
     // Мобильное меню
