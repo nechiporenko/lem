@@ -54,9 +54,9 @@
                     <li class="menu__item">
                         <a href="about.html" class="menu__link">О компании</a>
                     </li>
-                    <!--<li class="menu__item">
-            <a href="contacts.html" class="menu__link">Контакты</a>
-        </li>-->
+                    <li class="menu__item">
+                        <a href="contacts.html" class="menu__link">Контакты</a>
+                    </li>
                 </ul>
                 <!--desktop menu-->
                 <!--right header section-->
@@ -208,19 +208,19 @@
             <div class="g-container">
                 <!--catalog header-->
                 <div class="g-row">
-                    <aside class="b-catalog__side">
+                    <div class="b-catalog__side">
                         <h1 class="g-title">Каталог</h1>
-                    </aside>
+                    </div>
                     <div class="b-catalog__main">
                         <ul class="b-tags">
                             <li class="b-tags__item">
-                                <a href="#" class="b-tags__link">Новинки</a>
+                                <a href="#" class="b-tags__link color4">Новинки</a>
                             </li>
                             <li class="b-tags__item">
-                                <a href="#" class="b-tags__link">Бестселлеры</a>
+                                <a href="#" class="b-tags__link color2">Бестселлеры</a>
                             </li>
                             <li class="b-tags__item">
-                                <a href="#" class="b-tags__link">Скидки</a>
+                                <a href="#" class="b-tags__link color1">Скидки</a>
                             </li>
                         </ul>
                     </div>
@@ -229,17 +229,200 @@
 
                 <div class="g-row">
                     <!--catalog filter-->
-                    <aside class="b-catalog__side"></aside>
+                    <aside class="b-catalog__side">
+                        <form class="b-filter">
+                            <fieldset>
+                                <legend>Автор</legend>
+                            </fieldset>
+                        </form>
+                    </aside>
                     <!--/catalog filter-->
                     <!--catalog main-->
                     <div class="b-catalog__main">
-                        <p>Издательская деятельность начата нами еще в те неспокойные 1995-96 годы. На рынке явно ощущался дефицит правовой информации в сфере финансов и экономики. Поэтому мы приступили к изданию нормативно-правовых актов Министерства финансов. Тем более,что государство тоже ничего подобного не публиковало.</p>
-                        <p>Начинали мы с журнала, в котором печатали информацию о страховании, бухучете, финансах и т.д. Потом был дайджест «Экономика и право Казахстана». После того, как дело пошло, мы начали издавать различные книги, посвященные экономической теме.</p>
-                        <p>Специализация. Подготовка, выпуск и реализация (оптовая и розничная продажа) деловой и юридической литературы, бланков налоговой и финансовой отчетности на территории Республики Казахстан. Выполнение издательско-полиграфических заказов тиражом от одного экземпляра и выше.</p>
-                        <p>Авторы. С нами сотрудничают ведущие аудиторские компании Казахстана. Авторами издаваемых книг являются известные ученые и юристы Республики Казахстан, а так же преподаватели ВУЗов.</p>
-                        <p>Секрет успеха. Одним из секретов нашего успеха и популярности на книжном рынке, мы считаем, актуальность, оперативность и читабельность предлагаемого материала. Ежемесячно обновляется литература и выходит несколько новых изданий.</p>
-                        <p>Сегодня ТОО «Издательство LEM» выпускает более 150 наименований деловой литературы. Всегда есть в наличии большой ассортимент форм налоговой и финансовой отчетности. Продукция издательства реализуются по всему Казахстану. Нашими клиентами являются все крупные книготорговые фирмы Республики Казахстан. Вся продукция ТОО «Издательство LEM» высокого полиграфического качества!</p>
-                        <p>ТОО «Издательство LEM» является членом Ассоциации книгоиздателей и книгораспространителей, членом Алматинской ассоциации предпринимателей, членом Независимой ассоциации предпринимателей, регулярно участвует на книжных ярмарках, проводимых «Алматыкитап» в КЦДС «Атакент», и других значимых мероприятиях. Наша продукция реализуется на всей территории Республики Казахстан.</p>
+                        <ul class="product-list">
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Вопрос на засыпку. Как заставить мозги шевелиться</a>
+                                            Джон Фарндон
+                                        </div>
+                                        <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">MBA в кармане. Практическое руководство по развитию к...</a>
+                                            Барри Пирсон
+                                        </div>
+                                        <span class="b-product__price">520 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Сто лет одиночества</a>
+                                            Габриэль Гарсиа Маркес
+                                        </div>
+                                        <span class="b-product__price">67 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Смотритель. В 2 томах. Том 2. Железная бездна</a>
+                                            Виктор Пелевин
+                                        </div>
+                                        <span class="b-product__price">1 199 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Специи и приправы. Сделай вкус любого блюда неповтори...</a>
+                                        </div>
+                                        <span class="b-product__price">41 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Сын террориста</a>
+                                            Зак Ибрагим
+                                        </div>
+                                        <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Вопрос на засыпку. Как заставить мозги шевелиться</a>
+                                            Джон Фарндон
+                                        </div>
+                                        <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">MBA в кармане. Практическое руководство по развитию к...</a>
+                                            Барри Пирсон
+                                        </div>
+                                        <span class="b-product__price">520 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Сто лет одиночества</a>
+                                            Габриэль Гарсиа Маркес
+                                        </div>
+                                        <span class="b-product__price">67 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Смотритель. В 2 томах. Том 2. Железная бездна</a>
+                                            Виктор Пелевин
+                                        </div>
+                                        <span class="b-product__price">1 199 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Специи и приправы. Сделай вкус любого блюда неповтори...</a>
+                                        </div>
+                                        <span class="b-product__price">41 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="product-list__item">
+                                <figure class="b-product">
+                                    <a href="product.html" class="b-product__thumb">
+                                        <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                                    </a>
+                                    <figcaption>
+                                        <div class="b-product__inner">
+                                            <a href="product.html" class="b-product__title">Сын террориста</a>
+                                            Зак Ибрагим
+                                        </div>
+                                        <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
+                                        <button type="button" class="b-product__btn">Купить</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+
+                        <div class="g-text-center">
+                            <button type="button" class="g-btn g-btn--wide">Показать еще</button>
+                        </div>
                     </div>
                     <!--/catalog main-->
                 </div><!--/g-row-->

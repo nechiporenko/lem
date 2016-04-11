@@ -1,0 +1,22 @@
+﻿@import "../../modules/_base.scss";
+/*Catalog grid*/
+.b-catalog{
+    @extend .page__section;
+    @extend .page__section--compact;
+}
+
+.b-catalog__side,
+.b-catalog__main{
+    @extend .g-column;
+}
+
+@include media($tablet){
+    .b-catalog__side{
+        width:(100%-$grid-gutter*2)/3;
+    }
+
+    .b-catalog__main{
+        width: 2*(100%-$grid-gutter*2)/3 + $grid-gutter;
+        margin-left:$grid-gutter;
+    }
+}

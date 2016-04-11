@@ -68,17 +68,6 @@
         background:$color3;
     }
 
-    &.color2,
-    &.color3{
-        color:$title-color;
-
-        &:hover,
-        &:active,
-        &:focus{
-            color:$title-color;
-        }
-    }
-
     &.color4{
         background:$color4;
     }

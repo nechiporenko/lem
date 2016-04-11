@@ -5,6 +5,10 @@
     list-style-type:none;
     padding:0;
     @extend .g-clearfix;
+
+    .b-product{
+        margin-bottom:28px;
+    }
 }
 
 .product-list__item{
@@ -18,7 +22,7 @@
         @include omega(3n);
     }
 
-    @include media($tablet){
+    @include media($desktop){
         @include omega-reset(3n);
         @include span-columns(3);
         @include omega(4n);
@@ -26,7 +30,17 @@
 }
 
 .product-list--full{
+    .b-product{
+        margin-bottom:$project-line-height;
+    }
+
     .product-list__item{
+        @include media($tablet){
+            @include omega-reset(3n);
+            @include span-columns(3);
+            @include omega(4n);
+        }
+
         @include media($desktop){
             @include omega-reset(4n);
             @include span-columns(2);
