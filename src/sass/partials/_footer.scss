@@ -13,6 +13,7 @@
     text-align:center;
     @include font-size(14px);
     line-height:strip-units($project-line-height/$project-font-size);
+    box-sizing:border-box;
 
     a{
         color:inherit;
@@ -39,10 +40,18 @@
         height:$footer-height;
         left:0;
         bottom:0;
+    }
+
+    .b-footer__main{
+        height:152px;
         overflow:hidden;
     }
 
     .b-footer--has-menu{
         height:$footer-height + 36px;
+
+        .b-footer__main{
+            height:188px;
+        }
     }
 }

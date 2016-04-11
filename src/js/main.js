@@ -8,6 +8,8 @@
 // Модальное окно
 // Слайдер
 // Вкладки
+// Галерея
+// Видео в модальном окне
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -23,7 +25,7 @@ jQuery(document).ready(function ($) {
     //---------------------------------------------------------------------------------------
     (function () {
         var $menu = $('.js-menu li');
-        $menu.has('ul').children('a').append('&nbsp;<i class="icomoon-dropdown"></i>').addClass('has-menu');
+        //$menu.has('ul').children('a').append('&nbsp;<i class="icomoon-dropdown"></i>').addClass('has-menu');
         $menu.on({
             mouseenter: function () {
                 $(this).find('ul:first').stop(true, true).fadeIn('fast');
@@ -34,7 +36,7 @@ jQuery(document).ready(function ($) {
                 $(this).find('a:first').removeClass('hover');
             }
         });
-        $menu.on('click', '.has-menu', function (e) {//запретим клик по заголовку под-меню
+        $menu.on('click', '.has-menu', function (e) {//запретим клик по заголовку субменю
             e.preventDefault();
         });
     })();
@@ -189,7 +191,7 @@ jQuery(document).ready(function ($) {
 
         // закрываем
         method.close = function () {
-            $modal.hide();
+            $modal.hide().find('iframe').attr('src', '');//если в модальном окне было видео - убъем
             $overlay.hide().unbind('click', method.close);
             $window.unbind('resize.modal');
         };
@@ -268,5 +270,48 @@ jQuery(document).ready(function ($) {
     };
     if ($('.js-tabs').length) { initTabs(); }
     
+    //
+    // Галерея
+    //---------------------------------------------------------------------------------------
+    function initGallery() {
+        $('.js-gallery').find('a[data-popup]').simpleLightbox({
+            navText: ['<i class="icomoon-left"></i>', '<i class="icomoon-right"></i>'],
+            captions: true,
+            captionSelector: 'self',
+            captionType: 'data',
+            captionsData: 'caption',
+            close: true,
+            closeText: '<i class="icomoon-cross"></i>',
+            showCounter: true,
+            disableScroll:false
+        });
+    };
+    if ($('.js-gallery').length) { initGallery(); }
+
+    //
+    // Видео в модальном окне
+    //---------------------------------------------------------------------------------------
+    $('a[data-video]').on('click', function (e) {
+        e.preventDefault();
+        var link = $(this).attr('href'),
+            id = getYoutubeID(link);
+
+        if (id) {
+            $('#video').find('iframe').attr('src', 'https://www.youtube.com/embed/' + id + '?rel=0&amp;showinfo=0;autoplay=1');
+            showModal.open('#video');
+        }
+
+        function getYoutubeID(url) {//парсим youtube-ссылку, возвращаем id видео
+            var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+            var match = url.match(regExp),
+                urllink;
+            if (match && match[1].length == 11) {
+                urllink = match[1];
+            } else {
+                urllink = false;
+            }
+            return urllink;
+        }
+    });
     
 });

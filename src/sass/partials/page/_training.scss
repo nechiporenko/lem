@@ -1,0 +1,38 @@
+﻿@import "../../modules/_base.scss";
+/*Training link*/
+.b-training{
+    max-width:460px;
+    height:180px;
+    margin:0 auto $project-line-height;
+    position:relative;
+    @extend .g-shadow-hover;
+}
+
+.b-training__link,
+.b-training__img{
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+}
+
+.b-training__link{
+    text-decoration:none;
+    z-index:2;
+}
+
+.b-training__img{
+    background-position:center center;
+    background-repeat:no-repeat;
+    z-index:1;
+}
+
+.b-training__caption{
+    display:inline-block;
+    padding:10px 30px;
+    position:absolute;
+    left:0; bottom:0;
+    color:#fff;
+    background:$primary;
+    text-transform:uppercase;
+    white-space:nowrap;
+    z-index:1;
+}

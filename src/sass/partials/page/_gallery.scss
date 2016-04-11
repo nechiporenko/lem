@@ -1,0 +1,112 @@
+﻿@import "../../modules/_base.scss";
+/*Gallery*/
+.gallery{
+    list-style-type:none;
+    padding:0;
+    @extend .g-clearfix;
+}
+.gallery__item{
+    @extend .g-column;
+
+    @include media($mobile){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($small){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+
+    @include media($tablet){
+        @include omega-reset(3n);
+        @include span-columns(3);
+        @include omega(4n);
+    }
+}
+
+.gallery__inner{
+   max-width:240px;
+   margin:0 auto $project-line-height;
+}
+
+.gallery__thumb{
+    display:block;
+    border:1px solid $border-color;
+    text-decoration:none;
+    position:relative;
+    box-sizing:border-box;
+
+    &:after{
+        content:'';
+        display:block;
+        padding-top:96%;
+    }
+
+    @extend .g-shadow-hover;
+}
+
+.gallery__img{
+    @extend .g-img-centered;
+    max-width:98%;
+    max-height:98%;
+    box-sizing:border-box;
+    border:1px solid $border-color;
+    padding:3px;
+}
+
+.gallery__caption{
+    padding:21px 10px;
+    text-align:center;
+}
+.gallery__title,
+.gallery__date{
+    display:block;
+}
+.gallery__date{
+    font-weight:600;
+}
+
+
+.b-gallery{//для галереи, содержащей фото и видео
+    @extend .gallery;
+}
+
+.b-gallery__item{
+    @extend .g-column;
+
+    @include media($small){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($desktop){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+}
+
+.b-gallery__inner{
+    max-width:300px;
+    margin:0 auto $project-line-height;
+}
+
+.b-gallery__thumb{
+    @extend .gallery__thumb;
+
+    &:after{
+        padding-top:56.25% //16:9
+    }
+}
+
+.b-gallery__img{
+    @extend .g-img-centered;
+    max-width:98%;
+    max-height:98%;
+}
+
+.b-gallery__caption{
+    padding:14px 10px;
+}

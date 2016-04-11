@@ -72,3 +72,13 @@ img.g-full-width{clear:both;display:block;width:100%;height:auto;margin:0 0 0 0;
 	height: 100%;
     border:none;
 }
+
+.g-shadow-hover{
+    @include transition-property(box-shadow, border-color);
+    @include transition-duration(.3s);
+    @include transition-timing-function(ease);
+
+    &:hover{
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
