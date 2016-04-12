@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Publishing - Product Page</title>
+    <title>Etching Page</title>
     <meta name="description" content="Page Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -21,7 +21,7 @@
         <nav class="b-header__inner">
             <div class="g-container">
                 <!--logo-->
-                <a href="index.html" class="b-header__logo">Издательство LEM</a>
+                <a href="index.html" class="b-header__logo b-header__logo--etching">Издательство LEM</a>
                 <!--/logo-->
                 <!--desktop menu-->
                 <ul class="menu js-menu">
@@ -35,7 +35,7 @@
                         </a>
                         <ul class="submenu">
                             <li class="submenu__item">
-                                <a href="publishing.html" class="submenu__link current">Издательство</a>
+                                <a href="publishing.html" class="submenu__link">Издательство</a>
                             </li>
                             <li class="submenu__item">
                                 <a href="stamps.html" class="submenu__link">Печати и штампы</a>
@@ -44,7 +44,7 @@
                                 <a href="polygraphy.html" class="submenu__link">Полиграфические услуги</a>
                             </li>
                             <li class="submenu__item">
-                                <a href="etching.html" class="submenu__link">Лазерная резка и гравировка</a>
+                                <a href="etching.html" class="submenu__link current">Лазерная резка и гравировка</a>
                             </li>
                             <li class="submenu__item">
                                 <a href="training.html" class="submenu__link">Учебный центр</a>
@@ -62,13 +62,13 @@
                 <!--right header section-->
                 <div class="b-header__right">
                     <!--cart link-->
-                    <a href="cart.html" class="b-cartlink active">
+                    <!--<a href="cart.html" class="b-cartlink active">
                         <i class="icomoon-shop"></i>
                         <span class="b-cartlink__count">12</span>
-                    </a>
+                    </a>-->
                     <!--/cart link-->
                     <!--search btn-->
-                    <button type="button" class="b-header__search" data-searchform><i class="icomoon-search"></i></button>
+                    <!--<button type="button" class="b-header__search" data-searchform><i class="icomoon-search"></i></button>-->
                     <!--/search btn-->
                     <!--header phones-->
                     <button class="b-header__btn b-header__btn--callback" data-modal="#callback"><i class="icomoon-phone"></i></button>
@@ -97,7 +97,7 @@
                             <a href="#" class="b-slider__link">
                                 <div class="b-slider__img" style="background-image:url(img/slider/slider01.png)"></div>
                                 <div class="b-slider__content">
-                                    <span class="b-slider__title">Печати и штампы</span>
+                                    <span class="b-slider__title">Полиграфические услуги</span>
                                     <span class="g-btn color2">Подробнее</span>
                                 </div>
                             </a>
@@ -137,13 +137,8 @@
                         <span itemprop="title">Главная</span>
                     </a>
                 </li>
-                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <a href="publishing.html" class="breadcrumbs__link" itemprop="url">
-                        <span itemprop="title">Издательство</span>
-                    </a>
-                </li>
                 <li class="breadcrumbs__item">
-                    Название книги
+                    Лазерная резка и гравировка
                 </li>
             </ol>
         </div>
@@ -152,229 +147,121 @@
         <!--page menu-->
         <nav class="page__menu js-p-menu">
             <button type="button" class="p-menu__button js-p-menu-toggle">
-                <i class="icomoon-menu"></i> Издательство: Меню
+                <i class="icomoon-menu"></i> Лазерная резка и гравировка: Меню
             </button>
-            <ul class="p-menu color1">
+            <ul class="p-menu color4">
                 <li class="p-menu__item">
-                    <a href="publishing-about.html" class="p-menu__link">Об издательстве</a>
-                </li>
-                <li class="p-menu__item">
-                    <a href="publishing-services.html" class="p-menu__link">Услуги</a>
+                    <a href="#!" class="p-menu__link">
+                        Услуги
+                    </a>
                 </li>
                 <li class="p-menu__item">
                     <a href="#!" class="p-menu__link">
-                        Сотрудничество
-                        <i class="icomoon-dropdown"></i>
+                        Прайс-лист
                     </a>
-                    <ul class="p-submenu">
-                        <li class="p-submenu__item">
-                            <a href="#" class="p-submenu__link">Издать книгу</a>
-                        </li>
-                        <li class="p-submenu__item">
-                            <a href="#" class="p-submenu__link">Сотрудничество</a>
-                        </li>
-                        <li class="p-submenu__item">
-                            <a href="#" class="p-submenu__link">Авторам</a>
-                        </li>
-                        <li class="p-submenu__item">
-                            <a href="#" class="p-submenu__link">Представителям</a>
-                        </li>
-                        <li class="p-submenu__item">
-                            <a href="#" class="p-submenu__link">Рекламодателям</a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="p-menu__item">
                     <a href="#!" class="p-menu__link">
-                        Доставка и оплата
-                        <i class="icomoon-dropdown"></i>
+                        Фото и видео
                     </a>
-                    <ul class="p-submenu">
-                        <li class="p-submenu__item">
-                            <a href="#" class="p-submenu__link">Акции и скидки</a>
-                        </li>
-                        <li class="p-submenu__item">
-                            <a href="#" class="p-submenu__link">Прайс-лист</a>
-                        </li>
-                        <li class="p-submenu__item">
-                            <a href="#" class="p-submenu__link">Доставка и оплата</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </nav>
         <!--/page menu-->
 
-        <!--product-->
-        <section class="product" itemscope itemtype="http://schema.org/Product">
+        <!--page preview-->
+        <section class="page__section page__section--compact">
             <div class="g-container">
-                <h1 class="g-title">Название книги</h1>
-                <div class="g-row">
-                    <figure class="g-col g-col--one-third g-text-center">
-                        <img src="img/del/book.jpg" alt="Book" itemprop="image" />
-                    </figure>
-
-                    <div class="g-col g-col--two-thirds">
-                        <span class="product__name" itemprop="name">Полное название книги</span>
-                        <span class="product__author">ФИО автора</span>
-
-                        <dl class="product__list">
-                            <dt>Код товара:</dt>
-                            <dd itemprop="productID">536-9874</dd>
-                        </dl>
-
-                        <dl class="product__list" itemscope itemtype="http://schema.org/Book">
-                            <dt>Оригинальное название:</dt>
-                            <dd itemprop="name">Кот</dd>
-                            <dt>Автор:</dt>
-                            <dd itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Олег Тищенков</span></dd>
-                            <dt>Издательство:</dt>
-                            <dd itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Студия Артемия Лебедева</span></dd>
-                            <dt>Жанр:</dt>
-                            <dd>комиксы</dd>
-                            <dt>Год издания:</dt>
-                            <dd itemprop="datePublished">2013</dd>
-                            <dt>Язык:</dt>
-                            <dd>русский</dd>
-                            <dt>Обложка:</dt>
-                            <dd>твердый переплет</dd>
-                            <dt>Кол-во страниц:</dt>
-                            <dd>296 стр.</dd>
-                            <dt>Формат:</dt>
-                            <dd>144 х 216 мм</dd>
-                            <dt>Тираж:</dt>
-                            <dd>3000 экз</dd>
-                            <dt>ISBN:</dt>
-                            <dd itemprop="isbn">978-5-98062-066-0</dd>
-                        </dl>
-
-                        <p itemscope itemtype="http://schema.org/Offer">
-                            Цена: <span class="product__price" itemprop="price" content="6925.00">6 925</span> <span itemprop="priceCurrency" content="KZT">тенге</span>
-                        </p>
-                        <button type="button" class="product__btn">Купить</button>
-                    </div>
-                </div><!--/g-row-->
-
-                <div class="page__section">
-                    <span class="g-subtitle">Описание</span>
-                    <div itemprop="description">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--/product-->
-
-        <!--other proiducts-->
-        <div class="page__section">
-            <div class="g-container">
-                <span class="g-subtitle">С этой книгой покупают</span>
-                <ul class="product-list product-list--full">
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                <h1 class="g-title">Лазерная резка и гравировка</h1>
+                <!--services list-->
+                <ul class="service-list">
+                    <li class="service-list__item">
+                        <figure class="service-list__inner">
+                            <a href="#" class="service-list__link">
+                                <span class="service-list__title">
+                                   Лазерная<br />резка
+                                </span>
                             </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Вопрос на засыпку. Как заставить мозги шевелиться</a>
-                                    Джон Фарндон
-                                </div>
-                                <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
-                            </figcaption>
                         </figure>
                     </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                    <li class="service-list__item">
+                        <figure class="service-list__inner">
+                            <a href="training-europe.html" class="service-list__link">
+                                <span class="service-list__title">
+                                    Лазерная<br />гравировка
+                                </span>
                             </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">MBA в кармане. Практическое руководство по развитию к...</a>
-                                    Барри Пирсон
-                                </div>
-                                <span class="b-product__price">520 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
-                            </figcaption>
                         </figure>
                     </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                    <li class="service-list__item">
+                        <figure class="service-list__inner">
+                            <a href="#" class="service-list__link">
+                                <span class="service-list__title">
+                                    Наградная<br />продукция
+                                </span>
                             </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Сто лет одиночества</a>
-                                    Габриэль Гарсиа Маркес
-                                </div>
-                                <span class="b-product__price">67 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
-                            </figcaption>
                         </figure>
                     </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                    <li class="service-list__item">
+                        <figure class="service-list__inner">
+                            <a href="#" class="service-list__link">
+                                <span class="service-list__title">
+                                    Изготовление<br />продукции
+                                </span>
                             </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Смотритель. В 2 томах. Том 2. Железная бездна</a>
-                                    Виктор Пелевин
-                                </div>
-                                <span class="b-product__price">1 199 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
-                            </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Специи и приправы. Сделай вкус любого блюда неповтори...</a>
-                                </div>
-                                <span class="b-product__price">41 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
-                            </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Сын террориста</a>
-                                    Зак Ибрагим
-                                </div>
-                                <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
-                            </figcaption>
                         </figure>
                     </li>
                 </ul>
+                <!--/services list-->
+            </div>
+        </section>
+        <!--/page preview-->
+
+        <!--page banners-->
+        <div class="page__section">
+            <div class="g-container">
+                <div class="g-row">
+                    <div class="g-col g-col--one-third">
+                        <figure class="g-text-center">
+                            <a href="#">
+                                <img src="http://placehold.it/300x180?text=Рекламный+баннер" class="g-shadow-hover" alt="Image" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="g-col g-col--one-third">
+                        <figure class="g-text-center">
+                            <a href="#">
+                                <img src="http://placehold.it/300x180?text=Рекламный+баннер" class="g-shadow-hover" alt="Image" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="g-col g-col--one-third">
+                        <figure class="g-text-center">
+                            <a href="#">
+                                <img src="http://placehold.it/300x180?text=Рекламный+баннер" class="g-shadow-hover" alt="Image" />
+                            </a>
+                        </figure>
+                    </div>
+                </div><!--/g-row-->
             </div>
         </div>
-        <!--/other proiducts-->
+        <!--/page banners-->
 
-        <!--seo-->
+        <!--page content-->
         <article class="page__section">
             <div class="g-container">
                 <h2 class="g-subtitle">Наша история</h2>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <ul>
+                    <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+                    <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+                    <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+                    <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+                </ul>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
             </div>
         </article>
-        <!--/seo-->
+        <!--/page content-->
     </main>
     <!--/main content-->
 
@@ -436,7 +323,7 @@
                 <a href="#!" class="m-menu__link">Услуги</a>
                 <ul class="m-submenu">
                     <li class="m-submenu__item">
-                        <a href="publishing.html" class="m-submenu__link current">Издательство</a>
+                        <a href="publishing.html" class="m-submenu__link">Издательство</a>
                     </li>
                     <li class="m-submenu__item">
                         <a href="stamps.html" class="m-submenu__link">Печати и штампы</a>

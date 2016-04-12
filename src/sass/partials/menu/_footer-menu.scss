@@ -44,3 +44,63 @@
     }
 }
 
+/*Other footer menu colors*/
+.f-menu{
+    &.color1{
+        .f-menu__link{
+            &:hover,
+            &:active{
+                color:$color1 !important;
+                text-decoration:none !important;
+            }
+
+            &.current{
+                color:$color1 !important;
+                border-bottom-color:$color1;
+            }
+        }
+    }
+    &.color2{
+        .f-menu__link{
+            &:hover,
+            &:active{
+                color:$color2 !important;
+                text-decoration:none !important;
+            }
+
+            &.current{
+                color:$color2 !important;
+                border-bottom-color:$color2;
+            }
+        }
+    }
+    &.color3{
+        .f-menu__link{
+            &:hover,
+            &:active{
+                color:$color3 !important;
+                text-decoration:none !important;
+            }
+
+            &.current{
+                color:$color3 !important;
+                border-bottom-color:$color3;
+            }
+        }
+    }
+    &.color4{
+        .f-menu__link{
+            &:hover,
+            &:active{
+                color:$color4 !important;
+                text-decoration:none !important;
+            }
+
+            &.current{
+                color:$color4 !important;
+                border-bottom-color:$color4;
+            }
+        }
+    }
+}
+

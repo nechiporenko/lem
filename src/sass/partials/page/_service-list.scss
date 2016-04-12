@@ -79,7 +79,7 @@
 
     &:hover{
         &:after{
-            box-shadow:0 10px 10px rgba(0, 0, 0, 0.4);
+            box-shadow:0 5px 10px rgba(0, 0, 0, 0.4);
         }
     }
 }
@@ -104,6 +104,7 @@
     &:active{//дефолтное 
         background:$primary;
         color:#fff;
+        box-shadow:inset 3px 3px 12px 3px rgba(#000, .15);
     }
 
     &.color1{//если потребуется указать другие цвета (перебить стили списка)
@@ -144,4 +145,27 @@
 
 .service-list__title{
     @extend .g-as-cell;
+}
+
+
+//5 в ряд на десктопе
+.service-list--compact{
+    .service-list__item{
+        @include media($desktop){
+            &:nth-child(4n+1){
+                clear:none;
+            }
+
+            margin-right: $grid-gutter;
+            width: (100%-$grid-gutter*4)/5;
+
+            &:nth-child(5n){
+                margin-right:0;
+            }
+
+            &:nth-child(5n+1){
+                clear:left;
+            }
+        }
+    }
 }

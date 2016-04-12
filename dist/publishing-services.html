@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Publishing - Product Page</title>
+    <title>Publishing - Services Page</title>
     <meta name="description" content="Page Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -143,7 +143,7 @@
                     </a>
                 </li>
                 <li class="breadcrumbs__item">
-                    Название книги
+                    Услуги
                 </li>
             </ol>
         </div>
@@ -159,7 +159,7 @@
                     <a href="publishing-about.html" class="p-menu__link">Об издательстве</a>
                 </li>
                 <li class="p-menu__item">
-                    <a href="publishing-services.html" class="p-menu__link">Услуги</a>
+                    <a href="publishing-services.html" class="p-menu__link current">Услуги</a>
                 </li>
                 <li class="p-menu__item">
                     <a href="#!" class="p-menu__link">
@@ -205,176 +205,65 @@
         </nav>
         <!--/page menu-->
 
-        <!--product-->
-        <section class="product" itemscope itemtype="http://schema.org/Product">
+        <!--page content-->
+        <section class="page__section page__section--compact">
             <div class="g-container">
-                <h1 class="g-title">Название книги</h1>
-                <div class="g-row">
-                    <figure class="g-col g-col--one-third g-text-center">
-                        <img src="img/del/book.jpg" alt="Book" itemprop="image" />
-                    </figure>
-
-                    <div class="g-col g-col--two-thirds">
-                        <span class="product__name" itemprop="name">Полное название книги</span>
-                        <span class="product__author">ФИО автора</span>
-
-                        <dl class="product__list">
-                            <dt>Код товара:</dt>
-                            <dd itemprop="productID">536-9874</dd>
-                        </dl>
-
-                        <dl class="product__list" itemscope itemtype="http://schema.org/Book">
-                            <dt>Оригинальное название:</dt>
-                            <dd itemprop="name">Кот</dd>
-                            <dt>Автор:</dt>
-                            <dd itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Олег Тищенков</span></dd>
-                            <dt>Издательство:</dt>
-                            <dd itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Студия Артемия Лебедева</span></dd>
-                            <dt>Жанр:</dt>
-                            <dd>комиксы</dd>
-                            <dt>Год издания:</dt>
-                            <dd itemprop="datePublished">2013</dd>
-                            <dt>Язык:</dt>
-                            <dd>русский</dd>
-                            <dt>Обложка:</dt>
-                            <dd>твердый переплет</dd>
-                            <dt>Кол-во страниц:</dt>
-                            <dd>296 стр.</dd>
-                            <dt>Формат:</dt>
-                            <dd>144 х 216 мм</dd>
-                            <dt>Тираж:</dt>
-                            <dd>3000 экз</dd>
-                            <dt>ISBN:</dt>
-                            <dd itemprop="isbn">978-5-98062-066-0</dd>
-                        </dl>
-
-                        <p itemscope itemtype="http://schema.org/Offer">
-                            Цена: <span class="product__price" itemprop="price" content="6925.00">6 925</span> <span itemprop="priceCurrency" content="KZT">тенге</span>
-                        </p>
-                        <button type="button" class="product__btn">Купить</button>
-                    </div>
-                </div><!--/g-row-->
-
-                <div class="page__section">
-                    <span class="g-subtitle">Описание</span>
-                    <div itemprop="description">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--/product-->
-
-        <!--other proiducts-->
-        <div class="page__section">
-            <div class="g-container">
-                <span class="g-subtitle">С этой книгой покупают</span>
-                <ul class="product-list product-list--full">
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                <h1 class="g-subtitle">Услуги</h1>
+                <!--feed start-->
+                <ul class="feed">
+                    <li class="feed__item">
+                        <figure class="feed__inner">
+                            <a href="publishing-service.html" class="feed__thumb">
+                                <img src="img/del/people.jpg" class="feed__img" alt="Service" />
                             </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Вопрос на засыпку. Как заставить мозги шевелиться</a>
-                                    Джон Фарндон
-                                </div>
-                                <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
+                            <figcaption class="feed__content">
+                                <a href="publishing-service.html" class="feed__title">Переплет книг</a>
+                                <p>Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed nunc...</p>
+                                <a href="publishing-service.html" class="feed__btn"><i class="icomoon-arrow-right"></i></a>
                             </figcaption>
                         </figure>
                     </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                    <li class="feed__item">
+                        <figure class="feed__inner">
+                            <a href="publishing-service.html" class="feed__thumb">
+                                <img src="http://placehold.it/248x162" class="feed__img" alt="Service" />
                             </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">MBA в кармане. Практическое руководство по развитию к...</a>
-                                    Барри Пирсон
-                                </div>
-                                <span class="b-product__price">520 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
+                            <figcaption class="feed__content">
+                                <a href="publishing-service.html" class="feed__title">Печать книг</a>
+                                <p>Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed nunc...</p>
+                                <a href="publishing-service.html" class="feed__btn"><i class="icomoon-arrow-right"></i></a>
                             </figcaption>
                         </figure>
                     </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                    <li class="feed__item">
+                        <figure class="feed__inner">
+                            <a href="publishing-service.html" class="feed__thumb">
+                                <img src="http://placehold.it/248x162" class="feed__img" alt="Service" />
                             </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Сто лет одиночества</a>
-                                    Габриэль Гарсиа Маркес
-                                </div>
-                                <span class="b-product__price">67 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
+                            <figcaption class="feed__content">
+                                <a href="publishing-service.html" class="feed__title">Услуги переводчика</a>
+                                <p>Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed nunc...</p>
+                                <a href="publishing-service.html" class="feed__btn"><i class="icomoon-arrow-right"></i></a>
                             </figcaption>
                         </figure>
                     </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                    <li class="feed__item">
+                        <figure class="feed__inner">
+                            <a href="publishing-service.html" class="feed__thumb">
+                                <img src="http://placehold.it/248x162" class="feed__img" alt="Service" />
                             </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Смотритель. В 2 томах. Том 2. Железная бездна</a>
-                                    Виктор Пелевин
-                                </div>
-                                <span class="b-product__price">1 199 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
-                            </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Специи и приправы. Сделай вкус любого блюда неповтори...</a>
-                                </div>
-                                <span class="b-product__price">41 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="product-list__item">
-                        <figure class="b-product">
-                            <a href="product.html" class="b-product__thumb">
-                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
-                            </a>
-                            <figcaption>
-                                <div class="b-product__inner">
-                                    <a href="product.html" class="b-product__title">Сын террориста</a>
-                                    Зак Ибрагим
-                                </div>
-                                <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
-                                <button type="button" class="b-product__btn">Купить</button>
+                            <figcaption class="feed__content">
+                                <a href="publishing-service.html" class="feed__title">Услуги корректора</a>
+                                <p>Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed nunc...</p>
+                                <a href="publishing-service.html" class="feed__btn"><i class="icomoon-arrow-right"></i></a>
                             </figcaption>
                         </figure>
                     </li>
                 </ul>
+                <!--/feed end-->
             </div>
-        </div>
-        <!--/other proiducts-->
-
-        <!--seo-->
-        <article class="page__section">
-            <div class="g-container">
-                <h2 class="g-subtitle">Наша история</h2>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            </div>
-        </article>
-        <!--/seo-->
+        </section>
+        <!--/page content-->
     </main>
     <!--/main content-->
 

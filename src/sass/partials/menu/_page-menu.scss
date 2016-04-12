@@ -40,6 +40,7 @@
     font-weight:600;
     white-space:nowrap;
     text-overflow:ellipsis;
+    overflow:hidden;
     text-transform:uppercase;
     background:#f9f9f9;
     border:none;
@@ -147,6 +148,71 @@
         &:hover{
             & > .p-submenu{
                 display:block;
+            }
+        }
+    }
+}
+
+
+/*Page menu - other colors*/
+.p-menu{
+    &.color1{
+        .p-menu__link,
+        .p-submenu__link{
+            &:hover,
+            &:active,
+            &.hover{
+                color:$color1;
+            }
+
+            &.current{
+                color:$color1;
+                border-bottom-color:$color1;
+            }
+        }
+    }
+    &.color2{
+        .p-menu__link,
+        .p-submenu__link{
+            &:hover,
+            &:active,
+            &.hover{
+                color:$color2;
+            }
+
+            &.current{
+                color:$color2;
+                border-bottom-color:$color2;
+            }
+        }
+    }
+    &.color3{
+        .p-menu__link,
+        .p-submenu__link{
+            &:hover,
+            &:active,
+            &.hover{
+                color:$color3;
+            }
+
+            &.current{
+                color:$color3;
+                border-bottom-color:$color3;
+            }
+        }
+    }
+    &.color4{
+        .p-menu__link,
+        .p-submenu__link{
+            &:hover,
+            &:active,
+            &.hover{
+                color:$color4;
+            }
+
+            &.current{
+                color:$color4;
+                border-bottom-color:$color4;
             }
         }
     }
