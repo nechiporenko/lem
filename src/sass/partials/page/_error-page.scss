@@ -1,0 +1,10 @@
+﻿@import "../../modules/_base.scss";
+.page__error{
+    @extend .g-container;
+    text-align:center;
+    height:180px;
+
+    @include media($tablet){
+        height:324px;
+    }
+}
