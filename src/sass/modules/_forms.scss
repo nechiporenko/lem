@@ -80,6 +80,12 @@ input[type="radio"] {
   display: inline; }
 
 
+.g-legend{
+    margin-bottom:$project-line-height;
+    color:$title-color;
+    font-weight:600;
+}
+
 
 //валидация полей
 .g-validate{
@@ -180,4 +186,33 @@ input[type="radio"] {
             }
         }
     }
+}
+
+/*Custom radio*/
+input[type=radio].css-radio {
+	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+label.css-radio-label {
+    display:inline-block;
+    margin-bottom:0;
+    -webkit-touch-callout: none;
+    @include user-select(none);
+    font-weight:400;
+    color:$text-color;
+    @include font-size(14px);
+}
+
+input[type=radio].css-radio + label.css-radio-label {
+	padding-left:25px;
+	display:inline-block;
+    line-height:1;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAAG1BMVEUAAACVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZW1HqiuAAAACXRSTlMAyo1hUB0Ksa+eK3NMAAAAPUlEQVQI12NgYFUUFApgYGAwdGBgEWZgYG4DstMNGAITgDSbKIMKAwg4MQiAaUZcNEwdXB9zGdgcmLkwewCSbwcbXBDFQwAAAABJRU5ErkJggg==) left top no-repeat;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=radio].css-radio:checked + label.css-radio-label,
+label.css-radio-label {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAAKlBMVEUAAABBhuBBhuBBhuBBhuBBhuBBhuBBhuBBhuBBhuBBhuBBhuBBhuBBhuAtZvC0AAAADXRSTlMAzBoH18ZhUEmNsa+MuF7o3QAAAFFJREFUCNdjYGCaGCqpwMDAkFjMYC7GwMC2mUGJwSqBQdGg5a4HsxDDdI67d+82VDIIswBpB0OGAF0gfYkVRsPEYerg+tgWg82BmQu2R0aBAQBu2iHyaD8qvAAAAABJRU5ErkJggg==) left top no-repeat;
 }

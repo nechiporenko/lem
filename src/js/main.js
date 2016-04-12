@@ -6,11 +6,14 @@
 // Стилизуем хидер при скролле
 // Форма поиска
 // Маска для телефонного номера
+// Стилизация Select
 // Модальное окно
 // Слайдер
 // Вкладки
 // Галерея
 // Видео в модальном окне
+// Скролл для фильтров каталога
+// Покажем / спрячем фильтры каталога
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -56,8 +59,6 @@ jQuery(document).ready(function ($) {
             timeout = false,
             delta = 200,
             method = {};
-
-        
 
         method.hideAllSubMenu = function () {//при клике по заголовку не активного меню, сперва спрячем все субменю
             var winW = $.viewportW();//ширина окна браузера
@@ -106,7 +107,7 @@ jQuery(document).ready(function ($) {
             }
         };
 
-        method.checkRezolution = function () {//если изменилось разрешение экрана - сбрасываем
+        method.checkResolution = function () {//если изменилось разрешение экрана - сбрасываем
             var winW = $.viewportW();//ширина экрана
             if (winW >= BREAKPOINT) {
                 method.hideAllSubMenu();
@@ -121,7 +122,7 @@ jQuery(document).ready(function ($) {
             } else {
                 timeout = false;
                 //ресайз окончен - проверяем
-                method.checkRezolution();
+                method.checkResolution();
             }
         };
 
@@ -262,6 +263,20 @@ jQuery(document).ready(function ($) {
     // Маска для телефонного номера
     //---------------------------------------------------------------------------------------
     $('.js-phone-input').mask('+7 (999) 999 - 99 - 99');
+
+    //
+    // Стилизация Select
+    //---------------------------------------------------------------------------------------
+    function stylingSelect() {
+        var $select = $('.js-select');
+        $select.each(function () {
+            $(this).selectric({
+                disableOnMobile: false,
+                responsive: true
+            });
+        });
+    }
+    if ($('.js-select').length) { stylingSelect(); }
 
     //
     // Модальное окно
@@ -428,4 +443,83 @@ jQuery(document).ready(function ($) {
         }
     });
     
+
+    //
+    // Скролл для фильтров каталога
+    //---------------------------------------------------------------------------------------
+    (function () {
+        $('.js-scroll').each(function () {
+            var $el = $(this);
+            $el.slimScroll({
+                height: '324px',
+                alwaysVisible: true,
+                touchScrollStep: 75,
+                color: '#4387e0'
+            });
+        });
+    })();
+
+
+    //
+    // Покажем / спрячем фильтры каталога
+    //---------------------------------------------------------------------------------------
+    function collapseFilter() {
+        var $filter=$('.js-filter-target'),
+            $btn=$('.js-filter-toggle'),
+            $toggle = $('.js-p-menu-toggle'),
+            BREAKPOINT = 992,
+            rtime, //переменные для пересчета ресайза окна с задержкой delta
+            timeout = false,
+            delta = 200,
+            method = {};
+
+        method.showFilter = function () {
+            $btn.removeClass('active');
+            $filter.slideDown(200);
+        };
+
+        method.hideFilter = function () {
+            $btn.addClass('active');
+            $filter.slideUp(200);
+        };
+
+        method.checkResolution = function () {
+            var winW = $.viewportW();//ширина экрана
+            if (winW >= BREAKPOINT) {//на десктопе покажем фильтр, в любом случае
+                $btn.removeClass('active');
+                $filter.show();
+            };
+        };
+
+        method.endResize = function () {
+            if (new Date() - rtime < delta) {
+                setTimeout(method.endResize, delta);
+            } else {
+                timeout = false;
+                //ресайз окончен - проверяем
+                method.checkResolution();
+            }
+        };
+
+        method.startResize = function () {
+            rtime = new Date();
+            if (timeout === false) {
+                timeout = true;
+                setTimeout(method.endResize, delta);
+            }
+        };
+
+        $btn.on('click', function () {//клик по кнопке - показать/скрыть
+            if ($(this).hasClass('active')) {
+                method.showFilter();
+            } else {
+                method.hideFilter();
+            }
+        });
+
+        $window.bind('resize', method.startResize);//начинаем отслеживать ресайз на десктоп
+    };
+    if ($('.js-filter-target').length) {
+        collapseFilter();
+    }
 });

@@ -4,3 +4,39 @@
 @import "product/_product-block.scss";//блок товара в каталоге
 @import "product/_catalog.scss";//разметка каталога
 @import "product/_catalog-tags.scss";//фильтры-метки каталога
+
+/*Product single page*/
+.product{
+    @extend .page__section;
+    @extend .page__section--compact;
+}
+
+.product__name,
+.product__author{
+    display:block;
+    margin:0;
+    @include font-size(14px);
+    font-weight:600;
+    text-transform:uppercase;
+    color:$title-color;
+}
+
+.product__list{
+    @extend .g-description-list;
+    @include font-size(12px);
+
+    dt, dd{
+        margin-bottom:5px;
+    }
+}
+
+.product__price{
+    font-weight:600;
+    color:$title-color;
+    @include font-size(24px);
+}
+
+.product__btn{
+    @extend .g-btn;
+    padding:0 45px;
+}

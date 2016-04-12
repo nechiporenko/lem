@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Publishing - Product Page</title>
+    <meta name="description" content="Page Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/app.css">       
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="page">
+    <!--header-->
+    <header class="b-header">
+        <nav class="b-header__inner">
+            <div class="g-container">
+                <!--logo-->
+                <a href="index.html" class="b-header__logo">Издательство LEM</a>
+                <!--/logo-->
+                <!--desktop menu-->
+                <ul class="menu js-menu">
+                    <li class="menu__item">
+                        <a href="index.html" class="menu__link">Главная</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#!" class="menu__link current">
+                            Услуги
+                            <i class="icomoon-dropdown"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu__item">
+                                <a href="publishing.html" class="submenu__link current">Издательство</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="stamps.html" class="submenu__link">Печати и штампы</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="polygraphy.html" class="submenu__link">Полиграфические услуги</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="etching.html" class="submenu__link">Лазерная резка и гравировка</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="training.html" class="submenu__link">Учебный центр</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu__item">
+                        <a href="about.html" class="menu__link">О компании</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="contacts.html" class="menu__link">Контакты</a>
+                    </li>
+                </ul>
+                <!--desktop menu-->
+                <!--right header section-->
+                <div class="b-header__right">
+                    <!--cart link-->
+                    <a href="cart.html" class="b-cartlink active">
+                        <i class="icomoon-shop"></i>
+                        <span class="b-cartlink__count">12</span>
+                    </a>
+                    <!--/cart link-->
+                    <!--search btn-->
+                    <button type="button" class="b-header__search" data-searchform><i class="icomoon-search"></i></button>
+                    <!--/search btn-->
+                    <!--header phones-->
+                    <button class="b-header__btn b-header__btn--callback" data-modal="#callback"><i class="icomoon-phone"></i></button>
+                    <div class="b-phone">
+                        <a href="tel:+87273755133" class="b-phone__num">8 (727) 375 - 51 - 33</a>
+                        <button type="button" class="b-phone__callback" data-modal="#callback">Заказать бесплатный звонок</button>
+                    </div>
+                    <!--/header phones-->
+                    <!--mobile menu btn-->
+                    <button type="button" class="b-header__btn b-header__btn--menu js-mm-toggle"><i class="icomoon-menu"></i></button>
+                    <!--/mobile menu btn-->
+                </div>
+                <!--/right header section-->
+            </div>
+        </nav>
+    </header>
+    <!--/header-->
+
+    <!--slider-->
+    <div class="g-container">
+        <div class="b-slider">
+            <div class="b-slider__wrap">
+                <div class="b-slider__inner">
+                    <ul class="b-slider__list js-slider">
+                        <li class="b-slider__item">
+                            <a href="#" class="b-slider__link">
+                                <div class="b-slider__img" style="background-image:url(img/slider/slider01.png)"></div>
+                                <div class="b-slider__content">
+                                    <span class="b-slider__title">Печати и штампы</span>
+                                    <span class="g-btn color2">Подробнее</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="b-slider__item">
+                            <a href="#" class="b-slider__link">
+                                <div class="b-slider__img" style="background-image:url(http://placehold.it/600x126/20c38a)"></div>
+                                <div class="b-slider__content">
+                                    <span class="b-slider__title">Название услуги</span>
+                                    <span class="g-btn color3">Подробнее</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="b-slider__item">
+                            <a href="#" class="b-slider__link">
+                                <div class="b-slider__img" style="background-image:url(http://placehold.it/600x126/ff4a3d)"></div>
+                                <div class="b-slider__content">
+                                    <span class="b-slider__title">Название страницы</span>
+                                    <span class="g-btn">Подробнее</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/slider-->
+
+    <!--main content-->
+    <main class="page__content">
+        <!--breadcrumbs-->
+        <div class="g-container">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Главная</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="publishing.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Издательство</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Название книги
+                </li>
+            </ol>
+        </div>
+        <!--/breadcrumbs-->
+
+        <!--page menu-->
+        <nav class="page__menu js-p-menu">
+            <button type="button" class="p-menu__button js-p-menu-toggle">
+                <i class="icomoon-menu"></i> Издательство: Меню
+            </button>
+            <ul class="p-menu">
+                <li class="p-menu__item">
+                    <a href="publishing-about.html" class="p-menu__link">Об издательстве</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="publishing-services.html" class="p-menu__link">Услуги</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="#!" class="p-menu__link">
+                        Сотрудничество
+                        <i class="icomoon-dropdown"></i>
+                    </a>
+                    <ul class="p-submenu">
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Издать книгу</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Сотрудничество</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Авторам</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Представителям</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Рекламодателям</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="p-menu__item">
+                    <a href="#!" class="p-menu__link">
+                        Доставка и оплата
+                        <i class="icomoon-dropdown"></i>
+                    </a>
+                    <ul class="p-submenu">
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Акции и скидки</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Прайс-лист</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Доставка и оплата</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!--/page menu-->
+
+        <!--product-->
+        <section class="product" itemscope itemtype="http://schema.org/Product">
+            <div class="g-container">
+                <h1 class="g-title">Название книги</h1>
+                <div class="g-row">
+                    <figure class="g-col g-col--one-third g-text-center">
+                        <img src="img/del/book.jpg" alt="Book" itemprop="image" />
+                    </figure>
+
+                    <div class="g-col g-col--two-thirds">
+                        <span class="product__name" itemprop="name">Полное название книги</span>
+                        <span class="product__author">ФИО автора</span>
+
+                        <dl class="product__list">
+                            <dt>Код товара:</dt>
+                            <dd itemprop="productID">536-9874</dd>
+                        </dl>
+
+                        <dl class="product__list" itemscope itemtype="http://schema.org/Book">
+                            <dt>Оригинальное название:</dt>
+                            <dd itemprop="name">Кот</dd>
+                            <dt>Автор:</dt>
+                            <dd itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Олег Тищенков</span></dd>
+                            <dt>Издательство:</dt>
+                            <dd itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Студия Артемия Лебедева</span></dd>
+                            <dt>Жанр:</dt>
+                            <dd>комиксы</dd>
+                            <dt>Год издания:</dt>
+                            <dd itemprop="datePublished">2013</dd>
+                            <dt>Язык:</dt>
+                            <dd>русский</dd>
+                            <dt>Обложка:</dt>
+                            <dd>твердый переплет</dd>
+                            <dt>Кол-во страниц:</dt>
+                            <dd>296 стр.</dd>
+                            <dt>Формат:</dt>
+                            <dd>144 х 216 мм</dd>
+                            <dt>Тираж:</dt>
+                            <dd>3000 экз</dd>
+                            <dt>ISBN:</dt>
+                            <dd itemprop="isbn">978-5-98062-066-0</dd>
+                        </dl>
+
+                        <p itemscope itemtype="http://schema.org/Offer">
+                            Цена: <span class="product__price" itemprop="price" content="6925.00">6 925</span> <span itemprop="priceCurrency" content="KZT">тенге</span>
+                        </p>
+                        <button type="button" class="product__btn">Купить</button>
+                    </div>
+                </div><!--/g-row-->
+
+                <div class="page__section">
+                    <span class="g-subtitle">Описание</span>
+                    <div itemprop="description">
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/product-->
+
+        <!--other proiducts-->
+        <div class="page__section">
+            <div class="g-container">
+                <span class="g-subtitle">С этой книгой покупают</span>
+                <ul class="product-list product-list--full">
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Вопрос на засыпку. Как заставить мозги шевелиться</a>
+                                    Джон Фарндон
+                                </div>
+                                <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">MBA в кармане. Практическое руководство по развитию к...</a>
+                                    Барри Пирсон
+                                </div>
+                                <span class="b-product__price">520 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Сто лет одиночества</a>
+                                    Габриэль Гарсиа Маркес
+                                </div>
+                                <span class="b-product__price">67 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Смотритель. В 2 томах. Том 2. Железная бездна</a>
+                                    Виктор Пелевин
+                                </div>
+                                <span class="b-product__price">1 199 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Специи и приправы. Сделай вкус любого блюда неповтори...</a>
+                                </div>
+                                <span class="b-product__price">41 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="product-list__item">
+                        <figure class="b-product">
+                            <a href="product.html" class="b-product__thumb">
+                                <img src="http://placehold.it/120x120" class="b-product__img" alt="Product" />
+                            </a>
+                            <figcaption>
+                                <div class="b-product__inner">
+                                    <a href="product.html" class="b-product__title">Сын террориста</a>
+                                    Зак Ибрагим
+                                </div>
+                                <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
+                                <button type="button" class="b-product__btn">Купить</button>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--/other proiducts-->
+
+        <!--seo-->
+        <article class="page__section">
+            <div class="g-container">
+                <h2 class="g-subtitle">Наша история</h2>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            </div>
+        </article>
+        <!--/seo-->
+    </main>
+    <!--/main content-->
+
+    <!--search form-->
+    <div class="b-search">
+        <div class="b-search__wrapper">
+            <div class="b-search__inner">
+                <div class="g-container">
+                    <form>
+                        <span class="b-search__title">Поиск по разделу сайта</span>
+                        <label class="g-visuallyhidden">Поиск</label>
+                        <div class="g-row">
+                            <div class="g-col g-col--two-thirds">
+                                <input type="text" class="g-input" placeholder="Что будем искать?" />
+                            </div>
+                            <div class="g-col g-col--one-third">
+                                <button type="submit" class="g-btn g-full-width"><i class="icomoon-search"></i>&emsp;Поиск</button>
+                            </div>
+                        </div>
+                    </form>
+                    <button type="button" class="b-search__close"><i class="icomoon-cross"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/search form-->
+
+    <!--callback modal window-->
+    <div class="modal" id="callback">
+        <form class="modal__content" id="callbackForm">
+            <span class="modal__title">Заказать бесплатный звонок</span>
+            <div class="g-validate">
+                <label class="g-label" for="call_name">Имя *</label>
+                <div class="g-validate__inner g-validate__inner--has-icon">
+                    <input type="text" class="g-input" id="call_name" name="call_name" placeholder="Введите Ваше имя" required />
+                </div>
+            </div>
+            <div class="g-validate">
+                <label class="g-label" for="call_phone">Телефон *</label>
+                <div class="g-validate__inner g-validate__inner--has-icon">
+                    <input type="text" class="g-input js-phone-input" id="call_phone" name="call_phone" placeholder="Введите номер телефона" required />
+                </div>
+            </div>
+            <button type="submit" class="g-btn"><i class="icomoon-phone"></i>&emsp;Заказать звонок</button>
+        </form>
+    </div>
+    <!--/callback modal window-->
+
+    <!--mobile menu-->
+    <div class="page__panel js-mm">
+        <ul class="m-menu">
+            <li class="m-menu">
+                <label class="m-menu__label">Меню</label>
+            </li>
+            <li class="m-menu__item">
+                <a href="index.html" class="m-menu__link">Главная</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="#!" class="m-menu__link">Услуги</a>
+                <ul class="m-submenu">
+                    <li class="m-submenu__item">
+                        <a href="publishing.html" class="m-submenu__link current">Издательство</a>
+                    </li>
+                    <li class="m-submenu__item">
+                        <a href="stamps.html" class="m-submenu__link">Печати и штампы</a>
+                    </li>
+                    <li class="m-submenu__item">
+                        <a href="polygraphy.html" class="m-submenu__link">Полиграфические услуги</a>
+                    </li>
+                    <li class="m-submenu__item">
+                        <a href="etching.html" class="m-submenu__link">Лазерная резка и гравировка</a>
+                    </li>
+                    <li class="m-submenu__item">
+                        <a href="training.html" class="m-submenu__link">Учебный центр</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="m-menu__item">
+                <a href="about.html" class="m-menu__link">О компании</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="contacts.html" class="m-menu__link">Контакты</a>
+            </li>
+        </ul>
+    </div>
+    <!--/mobile menu-->
+
+    <!--footer-->
+    <footer class="b-footer">
+        <!--subscribe-->
+        <div class="b-subscribe">
+            <form class="g-container" id="subscribeForm">
+                <label class="b-subscribe__label" for="subscribe_mail">Подписывайтесь на нашу рассылку</label>
+                <div class="g-validate">
+                    <div class="g-validate__inner">
+                        <input type="email" class="b-subscribe__input" id="subscribe_mail" name="subscribe_mail" placeholder="Введите Ваш email" required />
+                    </div>
+                </div>
+                <button type="submit" class="b-subscribe__btn">Подписаться</button>
+            </form>
+        </div>
+        <!--/subscribe-->
+
+        <!--footer main info-->
+        <div class="b-footer__main">
+            <div class="g-container">
+                <p>
+                    ТОО «Издательство LEM»
+                    <br />
+                    050008, г. Алматы, ул. Ауэзова, 82
+                    <br />
+                    тел.: <a href="tel:87273755133">8 (727) 375-51-33</a>
+                    <br />
+                    e-mail: <a href="mailto:info@lem.kz">info@lem.kz</a>
+                </p>
+                <div class="b-footer__copyright">
+                    <i class="icomoon-copyright"></i> 2016 Copyright. Lem.kz. All rights reserved.
+                </div>
+            </div>
+        </div>
+        <!--/footer main info-->
+    </footer>
+    <!--/footer-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="js/app.min.js"></script>
+
+    <!--form validate-->
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script>
+        $().ready(function () {
+            $.validator.addMethod("minlenghtphone", function (value, element) {//доп.методы для того чтобы подружить masked input и jquery validate
+                return value.replace(/\D+/g, '').length > 10;
+            },
+            "Укажите корректный номер");
+
+            $.validator.addMethod("requiredphone", function (value, element) {
+                return value.replace(/\D+/g, '').length > 1;
+            },
+            "Укажите номер телефона");
+
+            var common = {//стилизация полей - общие правила для всех форм
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass(errorClass).removeClass(validClass);
+                    $(element.form).find("label[for=" + element.id + "]").parent('.g-validate').addClass(errorClass).removeClass(validClass);
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass(errorClass).addClass(validClass);
+                    $(element.form).find("label[for=" + element.id + "]").parent('.g-validate').removeClass(errorClass).addClass(validClass);
+                },
+            };
+
+            var callback = {//правила для формы заявки обратного звонка
+                rules: {
+                    call_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    call_phone: {
+                        requiredphone: true,
+                        minlenghtphone: true
+                    }
+                },
+                messages: {
+                    call_name: {
+                        required: 'Укажите Ваше имя',
+                        minlength: 'Не менее 2 символов'
+                    }
+                },
+            };
+
+            var subscribe = {//правила для формы подписки на новости
+                rules: {
+                    subscribe_mail: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    subscribe_mail: {
+                        required: 'Укажите email',
+                        email: 'Укажите корректный email'
+                    }
+                },
+            };
+
+            $('#callbackForm').validate($.extend(common, callback)); //валидация Заказать обратный звонок
+            $('#subscribeForm').validate($.extend(common, subscribe));//валидация Подписаться на новости
+        });
+    </script>
+    <!--/form validate-->
+</body>
+</html>

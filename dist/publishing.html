@@ -157,7 +157,7 @@
                     <a href="publishing-services.html" class="p-menu__link">Услуги</a>
                 </li>
                 <li class="p-menu__item">
-                    <a href="#!" class="p-menu__link current">
+                    <a href="#!" class="p-menu__link">
                         Сотрудничество
                         <i class="icomoon-dropdown"></i>
                     </a>
@@ -196,9 +196,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="p-menu__item">
-                    <a href="publishing-contacts.html" class="p-menu__link">Контакты</a>
-                </li>
             </ul>
         </nav>
         <!--/page menu-->
@@ -217,7 +214,7 @@
                                 <a href="#" class="b-tags__link color4">Новинки</a>
                             </li>
                             <li class="b-tags__item">
-                                <a href="#" class="b-tags__link color2">Бестселлеры</a>
+                                <a href="#" class="b-tags__link color2 current">Бестселлеры</a>
                             </li>
                             <li class="b-tags__item">
                                 <a href="#" class="b-tags__link color1">Скидки</a>
@@ -229,12 +226,72 @@
 
                 <div class="g-row">
                     <!--catalog filter-->
-                    <aside class="b-catalog__side">
-                        <form class="b-filter">
+                    <aside class="b-catalog__side b-filter">
+                        <button type="button" class="b-filter__toggle js-filter-toggle">
+                            <i class="icomoon-filter"></i>
+                            Показать / скрыть фильтры
+                        </button>
+                        <form class="js-filter-target">
                             <fieldset>
-                                <legend>Автор</legend>
+                                <legend class="g-legend">Автор</legend>
+                                <select class="g-select js-select">
+                                    <option selected disabled>- Выберите автора -</option>
+                                    <option value="1">Барри Пирсон</option>
+                                    <option value="2">Виктор Пелевин</option>
+                                    <option value="3">Габриэль Гарсия Маркес</option>
+                                    <option value="4">Джон Фарндон</option>
+                                </select>
                             </fieldset>
+                            <fieldset>
+                                <legend class="g-legend">Язык</legend>
+                                <p>
+                                    <input type="radio" name="group1" id="test1" class="css-radio" checked />
+                                    <label for="test1" class="css-radio-label">Русский</label>
+                                </p>
+                                <p>
+                                    <input type="radio" name="group1" id="test2" class="css-radio" />
+                                    <label for="test2" class="css-radio-label">Казахский</label>
+                                </p>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="g-legend">Тематика</legend>
+                                <div class="b-filter__scroll js-scroll">
+                                    <ul class="b-filter__list">
+                                        <li>
+                                            <a href="#">Бухучет и налогообложение</a>
+                                            <ul>
+                                                <li><a href="#">Учебная и справочная литература</a></li>
+                                                <li><a href="#">Учетная и учетная налоговая политика</a></li>
+                                                <li><a href="#">НСФО и МСФО</a></li>
+                                                <li><a href="#" class="current">Практические пособия для отраслей экономики</a></li>
+                                                <li><a href="#">Отдельные вопросы бухучета</a></li>
+                                                <li><a href="#">Труд и зароботная плата</a></li>
+                                                <li><a href="#">Налогообложение</a></li>
+                                                <li><a href="#">Малый бизнес</a></li>
+                                                <li><a href="#">Акционерное общество</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Охрана труда</a>
+                                            <ul>
+                                                <li><a href="#">Подтематика 1</a></li>
+                                                <li><a href="#">Подтематика 2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Военное право</a></li>
+                                        <li><a href="#">Формы налоговой отчетности</a></li>
+                                    </ul>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="g-btn g-full-width">Применить фильтр</button>
+                            <button type="button" class="g-btn g-btn--gray g-full-width">Очистить фильтры</button>
                         </form>
+                        <span class="g-spacer"></span>
+                        <figure class="g-text-center">
+                            <a href="#">
+                                <img src="http://placehold.it/300x180?text=Рекламный+баннер" class="g-shadow-hover" alt="Image" />
+                            </a>
+                        </figure>
                     </aside>
                     <!--/catalog filter-->
                     <!--catalog main-->
@@ -429,6 +486,17 @@
             </div>
         </section>
         <!--/catalog-->
+
+        <!--seo-->
+        <article class="page__section">
+            <div class="g-container">
+                <h2 class="g-title">Наша история</h2>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada <a href="#">fames ac turpis egestas</a>. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. <b>Mauris placerat</b> eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, <em>sagittis tempus lacus enim ac dui</em>. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </div>
+        </article>
+        <!--/seo-->
     </main>
     <!--/main content-->
 

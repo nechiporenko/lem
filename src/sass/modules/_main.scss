@@ -127,6 +127,7 @@ ol ul {
 .g-description-list{
     padding:0;
     margin:$project-line-height 0;
+    @extend .g-clearfix;
 
 
     dt, dd{
@@ -138,7 +139,7 @@ ol ul {
         margin-right:15px;
         clear:both;
         color:$title-color;
-        text-shadow:0 0 .1px rgba($title-color, .5);
+        text-shadow:0 0 .1px rgba($title-color, .3);
     }
     dd{
         margin-left:0;

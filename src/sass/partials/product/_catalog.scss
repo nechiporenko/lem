@@ -20,3 +20,76 @@
         margin-left:$grid-gutter;
     }
 }
+
+/*Catalog filter*/
+.b-filter{
+    
+}
+
+.b-filter__toggle{
+    @extend .g-clearbutton;
+    padding:0 0 3px 0;
+    color:$title-color;
+    margin-bottom:14px;
+    border-bottom:1px dashed $title-color;
+
+    &.active{
+        color:$primary;
+        border-color:$primary;
+    }
+
+    @include media($desktop){
+        display:none;
+    }
+}
+
+.no-js .b-filter__toggle{
+    display:none;
+}
+
+.b-filter__list{
+    list-style-type:none;
+    padding:0;
+
+    li{
+        display:block;
+        @include font-size(14px);
+        line-height:1.71428;
+    }
+
+    & > li > a{
+        color:$title-color;
+        text-shadow:0 0 .1px rgba($title-color, .5);
+    }
+
+    a{
+        text-decoration:none;
+
+        &:hover,
+        &:active,
+        &.current{
+            color:$primary;
+        }
+
+        &.current{
+            cursor:default;
+        }
+    }
+
+    ul{
+        list-style-type:none;
+        margin:0;
+        padding:0 0 0 15px;
+
+        a{
+            color:$text-color;
+        }
+    }
+}
+
+.b-filter__scroll{
+    margin-bottom:$project-line-height;
+    .b-filter__list{
+        margin-bottom:0;
+    }
+}

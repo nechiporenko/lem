@@ -6,6 +6,10 @@
     @include px2rem(padding, 0 10px);
     box-sizing:border-box;
 
+    @include media(min-width 500px){
+        width:85%;
+    }
+
     @include media($tablet){
         width:750px;
     }
