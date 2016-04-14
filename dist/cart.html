@@ -1,0 +1,597 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Publishing Page</title>
+    <meta name="description" content="Page Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/app.css">       
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="page">
+    <!--header-->
+    <header class="b-header">
+        <nav class="b-header__inner">
+            <div class="g-container">
+                <!--logo-->
+                <a href="index.html" class="b-header__logo">Издательство LEM</a>
+                <!--/logo-->
+                <!--desktop menu-->
+                <ul class="menu js-menu">
+                    <li class="menu__item">
+                        <a href="index.html" class="menu__link">Главная</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#!" class="menu__link current">
+                            Услуги
+                            <i class="icomoon-dropdown"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu__item">
+                                <a href="publishing.html" class="submenu__link">Издательство</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="stamps.html" class="submenu__link">Печати и штампы</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="polygraphy.html" class="submenu__link">Полиграфические услуги</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="etching.html" class="submenu__link">Лазерная резка и гравировка</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="training.html" class="submenu__link">Учебный центр</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu__item">
+                        <a href="about.html" class="menu__link">О компании</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="contacts.html" class="menu__link">Контакты</a>
+                    </li>
+                </ul>
+                <!--desktop menu-->
+                <!--right header section-->
+                <div class="b-header__right">
+                    <!--cart link-->
+                    <a href="cart.html" class="b-cartlink active">
+                        <i class="icomoon-shop"></i>
+                        <span class="b-cartlink__count">12</span>
+                    </a>
+                    <!--/cart link-->
+                    <!--search btn-->
+                    <button type="button" class="b-header__search" data-searchform><i class="icomoon-search"></i></button>
+                    <!--/search btn-->
+                    <!--header phones-->
+                    <button class="b-header__btn b-header__btn--callback" data-modal="#callback"><i class="icomoon-phone"></i></button>
+                    <div class="b-phone">
+                        <a href="tel:+87273755133" class="b-phone__num">8 (727) 375 - 51 - 33</a>
+                        <button type="button" class="b-phone__callback" data-modal="#callback">Заказать бесплатный звонок</button>
+                    </div>
+                    <!--/header phones-->
+                    <!--mobile menu btn-->
+                    <button type="button" class="b-header__btn b-header__btn--menu js-mm-toggle"><i class="icomoon-menu"></i></button>
+                    <!--/mobile menu btn-->
+                </div>
+                <!--/right header section-->
+            </div>
+        </nav>
+    </header>
+    <!--/header-->
+
+    <!--slider-->
+    <div class="g-container">
+        <div class="b-slider">
+            <div class="b-slider__wrap">
+                <div class="b-slider__inner">
+                    <ul class="b-slider__list js-slider">
+                        <li class="b-slider__item">
+                            <a href="#" class="b-slider__link">
+                                <div class="b-slider__img" style="background-image:url(img/slider/slider01.png)"></div>
+                                <div class="b-slider__content">
+                                    <span class="b-slider__title">Печати и штампы</span>
+                                    <span class="g-btn color2">Подробнее</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="b-slider__item">
+                            <a href="#" class="b-slider__link">
+                                <div class="b-slider__img" style="background-image:url(http://placehold.it/600x126/20c38a)"></div>
+                                <div class="b-slider__content">
+                                    <span class="b-slider__title">Название услуги</span>
+                                    <span class="g-btn color3">Подробнее</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="b-slider__item">
+                            <a href="#" class="b-slider__link">
+                                <div class="b-slider__img" style="background-image:url(http://placehold.it/600x126/ff4a3d)"></div>
+                                <div class="b-slider__content">
+                                    <span class="b-slider__title">Название страницы</span>
+                                    <span class="g-btn">Подробнее</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/slider-->
+
+    <!--main content-->
+    <main class="page__content">
+        <!--breadcrumbs-->
+        <div class="g-container">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Главная</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Издательство
+                </li>
+            </ol>
+        </div>
+        <!--/breadcrumbs-->
+
+        <!--page menu-->
+        <nav class="page__menu js-p-menu">
+            <button type="button" class="p-menu__button js-p-menu-toggle">
+                <i class="icomoon-menu"></i> Издательство: Меню
+            </button>
+            <ul class="p-menu color1">
+                <li class="p-menu__item">
+                    <a href="publishing-about.html" class="p-menu__link">Об издательстве</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="publishing-services.html" class="p-menu__link">Услуги</a>
+                </li>
+                <li class="p-menu__item">
+                    <a href="#!" class="p-menu__link">
+                        Сотрудничество
+                        <i class="icomoon-dropdown"></i>
+                    </a>
+                    <ul class="p-submenu">
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Издать книгу</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Сотрудничество</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Авторам</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Представителям</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Рекламодателям</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="p-menu__item">
+                    <a href="#!" class="p-menu__link">
+                        Доставка и оплата
+                        <i class="icomoon-dropdown"></i>
+                    </a>
+                    <ul class="p-submenu">
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Акции и скидки</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Прайс-лист</a>
+                        </li>
+                        <li class="p-submenu__item">
+                            <a href="#" class="p-submenu__link">Доставка и оплата</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!--/page menu-->
+
+        <section class="page__section page__section--compact">
+            <div class="g-container">
+                <h1 class="g-title">Корзина</h1>
+                <!--cart table-->
+                <div class="g-table-wrap">
+                    <table class="cart-table js-cart">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="g-text-left">Наименование</th>
+                                <th class="g-text-left">Цена</th>
+                                <th>Количество</th>
+                                <th class="g-text-left">Стоимость</th>
+                                <th>Удалить</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="cart-table__num js-num">1</span>
+                                </td>
+                                <td>
+                                    <a href="product.html">
+                                        <img src="http://placehold.it/100x150" class="cart-table__img" alt="Book" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" class="cart-table__title">Название книги</a>
+                                    <span class="cart-table__id"><b>Код товара:</b> 536-9874</span>
+                                </td>
+                                <td>
+                                    <span class="cart-table__price js-price">6925</span>&nbsp;тенге
+                                </td>
+                                <td>
+                                    <div class="cart-table__count">
+                                        <input type="text" class="g-input js-stepper" value="2" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="cart-table__price js-total">13850</span>&nbsp;тенге
+                                </td>
+                                <td class="g-text-center">
+                                    <button class="cart-table__btn js-delete" title="Удалить">
+                                        <i class="icomoon-close"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="cart-table__num js-num">2</span>
+                                </td>
+                                <td>
+                                    <a href="product.html">
+                                        <img src="http://placehold.it/100x150" class="cart-table__img" alt="Book" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" class="cart-table__title">Название книги</a>
+                                    <span class="cart-table__id"><b>Код товара:</b> 536-9874</span>
+                                </td>
+                                <td>
+                                    <span class="cart-table__price js-price">6925</span>&nbsp;тенге
+                                </td>
+                                <td>
+                                    <div class="cart-table__count">
+                                        <input type="text" class="g-input js-stepper" value="1" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="cart-table__price js-total">6925</span>&nbsp;тенге
+                                </td>
+                                <td class="g-text-center">
+                                    <button class="cart-table__btn js-delete" title="Удалить">
+                                        <i class="icomoon-close"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="g-text-right">
+                                    Сумма заказа:
+                                </td>
+                                <td>
+                                    <span class="cart-table__price js-total-price">20775</span>&nbsp;тенге
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!--/cart table-->
+            </div>
+        </section>
+
+        <!--empty cart msg-->
+        <section class="page__section g-hidden" id="empty_cart">
+            <div class="g-container">
+                <span class="g-title g-text-center">Ваша корзина пуста</span>
+                <p class="g-text-center">
+                    <a href="publishing.html" class="g-btn g-btn--wide">Продолжить покупки</a>
+                </p>
+            </div>
+        </section>
+        <!--/empty cart msg-->
+
+        <!--checkout form-->
+        <section class="page__content" id="checkout">
+            <div class="g-container">
+                <h2 class="g-title">Оформление заказа</h2>
+                <form id="checkoutForm">
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-label" for="user_name">Имя *</label>
+                                <div class="g-validate__inner g-validate__inner--has-icon">
+                                    <input type="text" class="g-input" id="user_name" name="user_name" placeholder="Укажите Ваше имя" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-label" for="user_mail">Email *</label>
+                                <div class="g-validate__inner g-validate__inner--has-icon">
+                                    <input type="email" class="g-input" id="user_mail" name="user_mail" placeholder="Укажите Ваш email" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-novalidate">
+                                <label class="g-label" for="user_phone">Телефон</label>
+                                <input type="text" class="g-input js-phone-input" id="user_phone" name="user_phone" placeholder="Укажите Ваш телефон" />
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-label" for="user_city">Город *</label>
+                                <div class="g-validate__inner g-validate__inner--has-icon">
+                                    <input type="text" class="g-input" id="user_city" name="user_city" placeholder="Укажите Ваш город" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="g-validate">
+                        <label class="g-label" for="user_addr">Адрес доставки *</label>
+                        <div class="g-validate__inner g-validate__inner--has-icon">
+                            <input type="text" class="g-input" id="user_addr" name="user_addr" placeholder="Укажите адрес доставки" required />
+                        </div>
+                    </div>
+                    <div class="g-novalidate">
+                        <label class="g-label" for="user_msg">Комментарий к заказу</label>
+                        <textarea class="g-textarea" id="user_msg" name="user_msg" placeholder="Ваш комментарий"></textarea>
+                    </div>
+                    <button type="submit" class="g-btn g-btn--gray">Отправить</button>
+                </form>
+            </div>
+        </section>
+        <!--/checkout form-->
+    </main>
+    <!--/main content-->
+
+    <!--search form-->
+    <div class="b-search">
+        <div class="b-search__wrapper">
+            <div class="b-search__inner">
+                <div class="g-container">
+                    <form>
+                        <span class="b-search__title">Поиск по разделу сайта</span>
+                        <label class="g-visuallyhidden">Поиск</label>
+                        <div class="g-row">
+                            <div class="g-col g-col--two-thirds">
+                                <input type="text" class="g-input" placeholder="Что будем искать?" />
+                            </div>
+                            <div class="g-col g-col--one-third">
+                                <button type="submit" class="g-btn g-full-width"><i class="icomoon-search"></i>&emsp;Поиск</button>
+                            </div>
+                        </div>
+                    </form>
+                    <button type="button" class="b-search__close"><i class="icomoon-cross"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/search form-->
+
+    <!--callback modal window-->
+    <div class="modal" id="callback">
+        <form class="modal__content" id="callbackForm">
+            <span class="modal__title">Заказать бесплатный звонок</span>
+            <div class="g-validate">
+                <label class="g-label" for="call_name">Имя *</label>
+                <div class="g-validate__inner g-validate__inner--has-icon">
+                    <input type="text" class="g-input" id="call_name" name="call_name" placeholder="Введите Ваше имя" required />
+                </div>
+            </div>
+            <div class="g-validate">
+                <label class="g-label" for="call_phone">Телефон *</label>
+                <div class="g-validate__inner g-validate__inner--has-icon">
+                    <input type="text" class="g-input js-phone-input" id="call_phone" name="call_phone" placeholder="Введите номер телефона" required />
+                </div>
+            </div>
+            <button type="submit" class="g-btn"><i class="icomoon-phone"></i>&emsp;Заказать звонок</button>
+        </form>
+    </div>
+    <!--/callback modal window-->
+
+    <!--mobile menu-->
+    <div class="page__panel js-mm">
+        <ul class="m-menu">
+            <li class="m-menu">
+                <label class="m-menu__label">Меню</label>
+            </li>
+            <li class="m-menu__item">
+                <a href="index.html" class="m-menu__link">Главная</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="#!" class="m-menu__link">Услуги</a>
+                <ul class="m-submenu">
+                    <li class="m-submenu__item">
+                        <a href="publishing.html" class="m-submenu__link">Издательство</a>
+                    </li>
+                    <li class="m-submenu__item">
+                        <a href="stamps.html" class="m-submenu__link">Печати и штампы</a>
+                    </li>
+                    <li class="m-submenu__item">
+                        <a href="polygraphy.html" class="m-submenu__link">Полиграфические услуги</a>
+                    </li>
+                    <li class="m-submenu__item">
+                        <a href="etching.html" class="m-submenu__link">Лазерная резка и гравировка</a>
+                    </li>
+                    <li class="m-submenu__item">
+                        <a href="training.html" class="m-submenu__link">Учебный центр</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="m-menu__item">
+                <a href="about.html" class="m-menu__link">О компании</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="contacts.html" class="m-menu__link">Контакты</a>
+            </li>
+        </ul>
+    </div>
+    <!--/mobile menu-->
+
+    <!--footer-->
+    <footer class="b-footer">
+        <!--subscribe-->
+        <div class="b-subscribe">
+            <form class="g-container" id="subscribeForm">
+                <label class="b-subscribe__label" for="subscribe_mail">Подписывайтесь на нашу рассылку</label>
+                <div class="g-validate">
+                    <div class="g-validate__inner">
+                        <input type="email" class="b-subscribe__input" id="subscribe_mail" name="subscribe_mail" placeholder="Введите Ваш email" required />
+                    </div>
+                </div>
+                <button type="submit" class="b-subscribe__btn">Подписаться</button>
+            </form>
+        </div>
+        <!--/subscribe-->
+
+        <!--footer main info-->
+        <div class="b-footer__main">
+            <div class="g-container">
+                <p>
+                    ТОО «Издательство LEM»
+                    <br />
+                    050008, г. Алматы, ул. Ауэзова, 82
+                    <br />
+                    тел.: <a href="tel:87273755133">8 (727) 375-51-33</a>
+                    <br />
+                    e-mail: <a href="mailto:info@lem.kz">info@lem.kz</a>
+                </p>
+                <div class="b-footer__copyright">
+                    <i class="icomoon-copyright"></i> 2016 Copyright. Lem.kz. All rights reserved.
+                </div>
+            </div>
+        </div>
+        <!--/footer main info-->
+    </footer>
+    <!--/footer-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="js/app.min.js"></script>
+
+    <!--form validate-->
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script>
+        $().ready(function () {
+            $.validator.addMethod("minlenghtphone", function (value, element) {//доп.методы для того чтобы подружить masked input и jquery validate
+                return value.replace(/\D+/g, '').length > 10;
+            },
+            "Укажите корректный номер");
+
+            $.validator.addMethod("requiredphone", function (value, element) {
+                return value.replace(/\D+/g, '').length > 1;
+            },
+            "Укажите номер телефона");
+
+            var common = {//стилизация полей - общие правила для всех форм
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass(errorClass).removeClass(validClass);
+                    $(element.form).find("label[for=" + element.id + "]").parent('.g-validate').addClass(errorClass).removeClass(validClass);
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass(errorClass).addClass(validClass);
+                    $(element.form).find("label[for=" + element.id + "]").parent('.g-validate').removeClass(errorClass).addClass(validClass);
+                },
+            };
+
+            var callback = {//правила для формы заявки обратного звонка
+                rules: {
+                    call_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    call_phone: {
+                        requiredphone: true,
+                        minlenghtphone: true
+                    }
+                },
+                messages: {
+                    call_name: {
+                        required: 'Укажите Ваше имя',
+                        minlength: 'Не менее 2 символов'
+                    }
+                },
+            };
+
+            var subscribe = {//правила для формы подписки на новости
+                rules: {
+                    subscribe_mail: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    subscribe_mail: {
+                        required: 'Укажите email',
+                        email: 'Укажите корректный email'
+                    }
+                },
+            };
+
+            var checkout = {//правила для формы оформления заказа
+                rules: {
+                    user_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    user_mail: {
+                        required: true,
+                        email: true
+                    },
+                    
+                    user_city: {
+                        required: true,
+                        minlength: 2
+                    },
+                    user_addr: {
+                        required: true,
+                        minlength: 10,
+                    }
+                },
+                messages: {
+                    user_name: {
+                        required: 'Укажите Ваше имя',
+                        minlength: 'Не менее 2 символов!'
+                    },
+                    user_mail: {
+                        required: 'Укажите Ваш email',
+                        email: 'Введите корректный email'
+                    },
+                    user_city: {
+                        required: 'Укажите город доставки',
+                        minlength: 'Минимум 2 символа'
+                    },
+                    user_addr: {
+                        required: 'Укажите адрес доставки',
+                        minlength: 'Не менее 10 символов',
+                    }
+                }
+            };
+
+            $('#callbackForm').validate($.extend(common, callback)); //валидация Заказать обратный звонок
+            $('#subscribeForm').validate($.extend(common, subscribe));//валидация Подписаться на новости
+            $('#checkoutForm').validate($.extend(common, checkout)); //валидация формы оформления заказа
+        });
+    </script>
+    <!--/form validate-->
+</body>
+</html>

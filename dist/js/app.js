@@ -104,6 +104,12 @@ jQuery.extend(verge);
     }); e.fn.extend({ slimscroll: e.fn.slimScroll })
 })(jQuery);
 
+//Numeric Stepper
+//Licensed under MIT
+// https://github.com/xFlatlinex/Numeric-Stepper
+!function (e) { e.fn.stepper = function (n) { var t = { type: "float", floatPrecission: 2, ui: !0, allowWheel: !0, allowArrows: !0, arrowStep: 1, wheelStep: 1, limit: [null, null], preventWheelAcceleration: !0, incrementButton: "&blacktriangle;", decrementButton: "&blacktriangledown;", onStep: null, onWheel: null, onArrow: null, onButton: null, onKeyUp: null }; return e(this).each(function () { function o(e) { e.preventDefault(); var n, t = e.originalEvent; if (t.wheelDelta ? n = t.wheelDelta / 120 : t.detail && (n = -t.detail / 3), n) { i.preventWheelAcceleration && (n = 0 > n ? -1 : 1); var o = r(i.wheelStep * n); a("Wheel", [o, n > 0]) } } function r(e) { c.val() || c.val(0); var n = "int" == i.type ? parseInt : parseFloat, t = l(n(c.val()) + e); return c.val(t), a("Step", [t, e > 0]), t } function a(e, n) { var t = i["on" + e]; "function" == typeof t && t.apply(c, n) } function l(e) { var n = i.limit[0], t = i.limit[1]; return null !== n && n > e ? e = n : null !== t && e > t && (e = t), p(e) } function p(e, n) { "undefined" == typeof n && (n = i.floatPrecission); var t = Math.pow(10, n); return e = Math.round(e * t) / t } var u = e(this).data(); delete u.stepper; var i = e.extend({}, t, n, u), c = e(this), f = e('<div class="stepper-wrap"/>'); if (!c.data("stepper")) { if (f.insertAfter(c), c.appendTo(f), c.stepper = function () { return { limit: l, decimalRound: p, onStep: function (e) { i.onStep = e }, onWheel: function (e) { i.onWheel = e }, onArrow: function (e) { i.onArrow = e }, onButton: function (e) { i.onButton = e }, onKeyUp: function (e) { i.onKeyUp = e } } }(), c.data("stepper", c.stepper), i.ui) { var s, w = e('<div class="stepper-btn-wrap"/>').appendTo(f), v = e('<a class="button stepper-btn-up">' + i.incrementButton + "</a>").appendTo(w), d = e('<a class="button stepper-btn-dwn">' + i.decrementButton + "</a>").appendTo(w); v.mousedown(function (e) { e.preventDefault(); var n = r(i.arrowStep); a("Button", [n, !0]) }), d.mousedown(function (e) { e.preventDefault(); var n = r(-i.arrowStep); a("Button", [n, !1]) }), e(document).mouseup(function () { clearInterval(s) }) } i.allowWheel && (f.bind("DOMMouseScroll", o), f.bind("mousewheel", o)), f.keydown(function (n) { var t = n.which, o = c.val(); if (i.allowArrows) switch (t) { case 38: o = r(i.arrowStep), a("Arrow", [o, !0]); break; case 40: o = r(-i.arrowStep), a("Arrow", [o, !1]) } (37 > t && t > 40 || t > 57 && 91 > t || t > 105 && 110 != t && 190 != t) && n.preventDefault(), "float" == i.type && -1 != e.inArray(t, [110, 190]) && -1 != o.indexOf(".") && n.preventDefault() }).keyup(function () { a("KeyUp", [c.val()]) }) } }) } }(jQuery);
+
+
 // Application Scripts:
 
 // Десктоп меню (выпадайки)
@@ -120,6 +126,8 @@ jQuery.extend(verge);
 // Видео в модальном окне
 // Скролл для фильтров каталога
 // Покажем / спрячем фильтры каталога
+// Подключим степперы для кол-ва товаров в корзине
+// Калькулятор в корзине
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -627,5 +635,90 @@ jQuery(document).ready(function ($) {
     };
     if ($('.js-filter-target').length) {
         collapseFilter();
+    };
+
+    //
+    // Подключим степперы для кол-ва товаров в корзине
+    //---------------------------------------------------------------------------------------
+    function initStepper() {
+        $('.js-stepper').stepper({
+            'incrementButton': '+',
+            'decrementButton': '-',
+            'limit': [1, 100],
+            'allowWheel': false,
+            'allowArrows': false
+        }).on('change', function () {
+            var val = $(this).val();
+            val = Math.round(val);
+
+            if (val > 100) {
+                val = 100;
+            };
+
+            if (val == 0) {
+                val = 1;
+            };
+
+            $(this).val(val);
+        });
+    };
+    if ($('.js-stepper').length) {
+        initStepper();
+    };
+
+    //
+    // Калькулятор в корзине
+    //---------------------------------------------------------------------------------------
+    function initCartCalc() {
+        var $cart = $('.js-cart'), //таблица корзины
+            $cartcount = $('.b-cartlink__count'), //кол-во товаров в хидере
+            $total = $cart.find('.js-total-price'), //итоговая сумма
+            method = {};
+
+        method.recalc = function () {//пересчитываем корзину
+            var i = 0,
+                total_count = 0,
+                total_price = 0;
+            $cart.find('tbody tr').each(function () {
+                i++;
+                $(this).find('.js-num').text(i);//номер позиции
+                var price = +$(this).find('.js-price').text(),
+                    count = +$(this).find('.js-stepper').val(),
+                    item_price = count * price;
+                total_count = total_count + count;
+                total_price = total_price + item_price;
+                $(this).find('.js-total').text(item_price);
+            });
+
+            $total.text(total_price);
+            $cartcount.text(total_count);
+
+            if (total_count === 0) {
+                method.empty();//если нет товаров в корзине
+            }
+        };
+
+        method.delete = function (el) {//удаляем строку
+            var $row = el.parents('tr');
+            $row.remove();
+            method.recalc();
+        };
+
+        method.empty = function () {
+            $('#checkout').hide();
+            $('#empty_cart').removeClass('g-hidden');
+            $cartcount.parent('a').removeClass('active');
+        };
+
+        method.recalc();//проверим на старте
+
+        $cart.find('.js-stepper').bind('change', method.recalc);//отслеживаем изменение кол-ва товаров
+        $cart.find('.stepper-btn-wrap a').bind('click', method.recalc);
+        $cart.find('.js-delete').on('click', function () {//удаление строки
+            method.delete($(this));
+        });
+    };
+    if ($('.js-cart').length) {
+        initCartCalc();
     }
 });

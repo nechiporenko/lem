@@ -1,0 +1,57 @@
+﻿@import "../../modules/_base.scss";
+/*Numeric Stepper*/
+.stepper-wrap{
+    display:inline-block;
+    position:relative;
+    width:130px;
+    margin: 0 auto;
+
+    .g-input{
+        padding:0 40px;
+        text-align:center;
+        @include font-size(24px);
+        color:$title-color;
+    }
+
+    &:hover,
+    &:active{
+        .g-input-stepper{
+            border-color:$primary;
+        }
+
+        .button{
+            border-color:$primary;
+        }
+    }
+}
+
+.stepper-btn-up,
+    .stepper-btn-dwn{
+        display:inline-block;
+        padding:0;
+        margin:0;
+        width:36px;
+        height:36px;
+        line-height:36px;
+        @include font-size(22px);
+        position:absolute;
+        top:0;
+        z-index:5;
+        color:$primary;
+        cursor:pointer;
+        text-align:center;
+
+        &:hover,
+        &:active{
+            background:#ddd;
+        }
+    }
+    .stepper-btn-up{
+        right:0;
+        border-left:1px solid $border-color;
+    }
+    .stepper-btn-dwn{
+        left:0;
+        border-right:1px solid $border-color;
+    }
+
