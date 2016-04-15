@@ -188,11 +188,27 @@ input[type="radio"] {
     }
 }
 
-/*Custom radio*/
+/*Styling checkboxes & radio*/
+input[type=checkbox].css-checkbox,
 input[type=radio].css-radio {
 	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
 }
 
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:25px;
+	display:inline-block;
+    line-height:1;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAgMAAABiJsVCAAAACVBMVEUAAABDh+BDh+B5AmPVAAAAA3RSTlMA4PwQA4kFAAAAFklEQVQI12OYGhqawODAwCBAJgE2AAD4/wb/nqeT+QAAAABJRU5ErkJggg==) left top no-repeat;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label,
+label.css-label {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAAKlBMVEUAAABDh+BDh+BCh+BEiOFAit9DhuFEiOFAhuBDh+BDiOBDh+BDh+FDh+CY7KI7AAAADnRSTlMA4P7YjxhUPA3z7+ewjDOY6r4AAABHSURBVAjXY1AUBAEhBgEGEGBEoVmPAmkOBoZg5UYGgeoCViMVRgaJRdODlRyA4kmaRiogdWxKSg5g9UkqEH1sF2D6kWiYPQA0hAmov+m5nwAAAABJRU5ErkJggg==) left top no-repeat;
+}
+
+label.css-label,
 label.css-radio-label {
     display:inline-block;
     margin-bottom:0;

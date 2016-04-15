@@ -233,27 +233,6 @@
                         </button>
                         <form class="js-filter-target">
                             <fieldset>
-                                <legend class="g-legend">Автор</legend>
-                                <select class="g-select js-select">
-                                    <option selected disabled>- Выберите автора -</option>
-                                    <option value="1">Барри Пирсон</option>
-                                    <option value="2">Виктор Пелевин</option>
-                                    <option value="3">Габриэль Гарсия Маркес</option>
-                                    <option value="4">Джон Фарндон</option>
-                                </select>
-                            </fieldset>
-                            <fieldset>
-                                <legend class="g-legend">Язык</legend>
-                                <p>
-                                    <input type="radio" name="group1" id="test1" class="css-radio" checked />
-                                    <label for="test1" class="css-radio-label">Русский</label>
-                                </p>
-                                <p>
-                                    <input type="radio" name="group1" id="test2" class="css-radio" />
-                                    <label for="test2" class="css-radio-label">Казахский</label>
-                                </p>
-                            </fieldset>
-                            <fieldset>
                                 <legend class="g-legend">Тематика</legend>
                                 <div class="b-filter__scroll js-scroll">
                                     <ul class="b-filter__list">
@@ -283,6 +262,42 @@
                                     </ul>
                                 </div>
                             </fieldset>
+
+                            <fieldset>
+                                <legend class="g-legend">Автор</legend>
+                                <select class="g-select js-select">
+                                    <option selected disabled>- Выберите автора -</option>
+                                    <option value="1">Барри Пирсон</option>
+                                    <option value="2">Виктор Пелевин</option>
+                                    <option value="3">Габриэль Гарсия Маркес</option>
+                                    <option value="4">Джон Фарндон</option>
+                                </select>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend class="g-legend">Язык</legend>
+                                <p>
+                                    <input type="checkbox" id="test3" class="css-checkbox" />
+                                    <label for="test3" class="css-label">Русский</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="test4" class="css-checkbox" />
+                                    <label for="test4" class="css-label">Казахский</label>
+                                </p>
+                            </fieldset>
+
+                            <!--<fieldset>
+                                <legend class="g-legend">Язык</legend>
+                                <p>
+                                    <input type="radio" name="group1" id="test1" class="css-radio" checked />
+                                    <label for="test1" class="css-radio-label">Русский</label>
+                                </p>
+                                <p>
+                                    <input type="radio" name="group1" id="test2" class="css-radio" />
+                                    <label for="test2" class="css-radio-label">Казахский</label>
+                                </p>
+                            </fieldset>-->
+
                             <button type="submit" class="g-btn g-full-width">Применить фильтр</button>
                             <button type="button" class="g-btn g-btn--gray g-full-width">Очистить фильтры</button>
                         </form>
