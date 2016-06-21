@@ -59,3 +59,16 @@
         }
     }
 }
+
+
+/*Search Result Table*/
+.search-tbl{
+    @extend .g-table;
+    @extend .g-table--bordered;
+}
+
+.search-tbl__info{
+    @include media($desktop){
+        width:30%;
+    }
+}
