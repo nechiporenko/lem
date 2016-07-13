@@ -29,11 +29,10 @@
     padding:0 30px;
     color:#fff;
     text-align: center;
-    @include font-size($project-font-size);
-    //font-family:$font-sans;
-    //font-weight:600;
+    @include font-size(15px);
+    font-weight:bold;
     text-decoration: none;
-    text-transform:uppercase;
+    //text-transform:uppercase;
     white-space: nowrap;
     background:$primary;
     border: none;

@@ -10,9 +10,9 @@
     display:block;
     margin-bottom:15px;
     @include font-size(15px);
-    text-transform:uppercase;
+    //text-transform:uppercase;
     color:$title-color;
-    font-weight:600;
+    //font-weight:600;
 }
 
 .b-subscribe__input{

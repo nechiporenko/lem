@@ -91,11 +91,14 @@
     height:126px;
     table-layout:fixed;
     text-decoration:none;
-    text-transform:uppercase;
+    //text-transform:uppercase;
+    @include font-size(16px);
+    font-weight:bold;
     box-sizing:border-box;
     background:#f5f5f5;
     color:$text-color;
-    line-height:1.33;
+    //line-height:1.33;
+    line-height:1.2;
     @include transition-property(background, color);
     @include transition-timing-function(ease-out);
     @include transition-duration(.2s);
