@@ -2,8 +2,7 @@
 /* Desktop Menu */
 .menu{
     @extend .g-clearlist;
-    //padding-top:38px;
-    padding-top:44px;
+    padding-top:38px;
     float:left;
     font-size:0;
     display:none;
@@ -15,8 +14,7 @@
 
 .menu__item{
     display:inline-block;
-    //@include font-size(14px);
-    @include font-size(17px);
+    @include font-size(14px);
     margin-left:25px;
     position:relative;
 
@@ -39,7 +37,7 @@
 .menu__link,
 .submenu__link{
     text-decoration:none;
-    //text-transform:uppercase;
+    text-transform:uppercase;
     font-weight:600;
     color:$title-color;
 
@@ -83,7 +81,6 @@
     display:block;
     line-height:1.1;
     padding:10px 2px;
-    @include font-size(15px);
 }
 
 .no-js{
