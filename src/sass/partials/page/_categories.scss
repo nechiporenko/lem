@@ -80,9 +80,7 @@
     width:100%;
     padding:0 10px;
     position:absolute;
-    top:55px;
-    //font-weight:600;
-    @include font-size(16px);
+    top:75px;
     line-height:1.125;
     box-sizing:border-box;
 }
@@ -105,7 +103,7 @@
 .b-category__icon{
     display:block;
     width:100%;
-    @include font-size(60px);
+    @include font-size(36px);
     line-height:1;
     position:absolute;
     top:140px;
@@ -113,8 +111,4 @@
     img, i{
         vertical-align:middle;
     }
-}
-
-.b-category__icon--alt{
-    font-size:rem(68px);
 }

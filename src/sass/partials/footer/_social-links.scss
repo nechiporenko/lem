@@ -1,0 +1,30 @@
+﻿@import "../../modules/_base.scss";
+/*Footer Social Links*/
+.b-footer__social{
+    margin-top:$project-line-height;
+
+    @include media($desktop){
+        margin:0;
+        position:absolute;
+        top:0;
+        right:0;
+    }
+}
+
+.f-social{
+    margin:4px 0 0;
+    padding:0;
+    list-style-type:none;
+    font-size:0;
+    text-align:center;
+}
+
+.f-social__item{
+    display:inline-block;
+    margin:0 7px;
+    @include font-size(24px);
+}
+
+.f-social__link{
+    text-decoration:none !important;
+}

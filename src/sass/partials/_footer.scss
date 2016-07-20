@@ -1,6 +1,7 @@
 @import "../modules/base";
 
 @import "footer/_subscribe.scss";
+@import "footer/_social-links.scss";
 
 /*Site Footer*/
 .b-footer{
@@ -24,6 +25,10 @@
             color:#fff;
             text-decoration:underline;
         }
+    }
+
+    .g-container{
+        position:relative;
     }
 }
 
