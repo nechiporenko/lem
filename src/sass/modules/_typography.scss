@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon.eot?eqw9jk');
-    src:    url('../fonts/icomoon.eot?eqw9jk#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?eqw9jk') format('truetype'),
-        url('../fonts/icomoon.woff?eqw9jk') format('woff'),
-        url('../fonts/icomoon.svg?eqw9jk#icomoon') format('svg');
+    src:    url('../fonts/icomoon.eot?zho6kk');
+    src:    url('../fonts/icomoon.eot?zho6kk#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?zho6kk') format('truetype'),
+        url('../fonts/icomoon.woff?zho6kk') format('woff'),
+        url('../fonts/icomoon.svg?zho6kk#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -25,6 +25,9 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icomoon-laserlogo:before {
+    content: "\e91a";
+}
 .icomoon-facebook:before {
     content: "\e917";
 }
@@ -103,3 +106,33 @@
 .icomoon-up:before {
     content: "\e912";
 }
+
+
+//Book Antiqua
+@font-face {
+  font-family: 'BookAntiqua.TTF';
+  src: url('../fonts/BookAntiqua.TTF.eot');
+  src: url('../fonts/BookAntiqua.TTF.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BookAntiqua';
+  src: url('../fonts/BookAntiqua.woff') format('woff'),
+       url('../fonts/BookAntiqua.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Proxima Nova Regular
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url('../fonts/ProximaNova-Regular.eot');
+  src: url('../fonts/ProximaNova-Regular.woff') format('woff'),
+       url('../fonts/ProximaNova-Regular.ttf') format('truetype'),
+       url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

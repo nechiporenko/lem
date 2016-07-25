@@ -76,3 +76,32 @@
         box-shadow:inset 3px 3px 30px rgba(#000, .3);
     }
 }
+
+//вариант с акционной ценой
+.b-product__price--new{
+    position:relative;
+    color:$color1;
+}
+.b-product__price--old{
+    display:inline-block;
+    padding:0 10px;
+    background:#fff;
+    color:#000;
+    font-weight:400;
+    font-size:14px;
+    position:absolute;
+    left:0;
+    top:-16px;
+    z-index:2; //поверх заливки
+
+    &:before{
+        content:'';
+        position:absolute;
+        top:50%;
+        left:8px;
+        right:8px;
+        border-top:1px solid $text-color;
+        @include transform(rotate(-7deg));
+    }
+
+}

@@ -49,7 +49,6 @@ html{
 .page{//body style
     min-height:100%;
     line-height: 1;
-    //font-family: $font-sans, Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
     font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
     box-sizing:border-box;
     position:relative;
@@ -75,9 +74,9 @@ h1, h2, h3, h4, h5, h6, .g-title, .g-subtitle{
   margin-bottom:15px;
   line-height:1.1;
   color:$title-color;
-  //font-family:$font-serif, serif;
-  //font-weight:400;
   font-weight:600;
+  font-family:$font-title;
+  font-weight:normal;
 }
 .g-title,
 .g-subtitle{

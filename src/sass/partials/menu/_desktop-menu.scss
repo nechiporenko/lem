@@ -38,7 +38,8 @@
 .submenu__link{
     text-decoration:none;
     text-transform:uppercase;
-    font-weight:600;
+    //font-weight:600;
+    font-family:$font-alt;
     color:$title-color;
 
     &:hover,
