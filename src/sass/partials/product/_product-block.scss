@@ -39,8 +39,8 @@
         position:absolute;
         left:0; bottom:0;
         width:100%;
-        height:10px;
-        @include linear-gradient(to bottom, rgba(#fff, .4), #fff);
+        height:18px;
+        @include linear-gradient(to bottom, rgba(#fff, .2), #fff);
         z-index:1;
     }
 }
@@ -84,24 +84,22 @@
 }
 .b-product__price--old{
     display:inline-block;
-    padding:0 10px;
     background:#fff;
-    color:#000;
-    font-weight:400;
-    font-size:14px;
+    color:$text-color;
     position:absolute;
     left:0;
     top:-16px;
+    line-height:1;
     z-index:2; //поверх заливки
 
     &:before{
         content:'';
         position:absolute;
         top:50%;
-        left:8px;
-        right:8px;
-        border-top:1px solid $text-color;
-        @include transform(rotate(-7deg));
+        left:0;
+        right:0;
+        border-top:1px solid #000;
+        @include transform(rotate(-12deg));
     }
 
 }
