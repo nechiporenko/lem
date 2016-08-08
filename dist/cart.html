@@ -330,9 +330,11 @@
                     </div>
                     <div class="g-row">
                         <div class="g-col g-col--one-half">
-                            <div class="g-novalidate">
-                                <label class="g-label" for="user_phone">Телефон</label>
-                                <input type="text" class="g-input js-phone-input" id="user_phone" name="user_phone" placeholder="Укажите Ваш телефон" />
+                            <div class="g-validate">
+                                <label class="g-label" for="user_phone">Телефон *</label>
+                                <div class="g-validate__inner g-validate__inner--has-icon">
+                                    <input type="text" class="g-input js-phone-input" id="user_phone" name="user_phone" placeholder="Укажите Ваш телефон" required />
+                                </div>
                             </div>
                         </div>
                         <div class="g-col g-col--one-half">
@@ -345,11 +347,9 @@
                         </div>
                     </div>
 
-                    <div class="g-validate">
-                        <label class="g-label" for="user_addr">Адрес доставки *</label>
-                        <div class="g-validate__inner g-validate__inner--has-icon">
-                            <input type="text" class="g-input" id="user_addr" name="user_addr" placeholder="Укажите адрес доставки" required />
-                        </div>
+                    <div class="g-novalidate">
+                        <label class="g-label" for="user_addr">Адрес доставки</label>
+                        <input type="text" class="g-input" id="user_addr" name="user_addr" placeholder="Укажите адрес доставки" />
                     </div>
                     <div class="g-novalidate">
                         <label class="g-label" for="user_msg">Комментарий к заказу</label>
@@ -553,6 +553,10 @@
                         required: true,
                         minlength: 2
                     },
+                    user__phone: {
+                        requiredphone: true,
+                        minlenghtphone: true
+                    },
                     user_mail: {
                         required: true,
                         email: true
@@ -562,10 +566,6 @@
                         required: true,
                         minlength: 2
                     },
-                    user_addr: {
-                        required: true,
-                        minlength: 10,
-                    }
                 },
                 messages: {
                     user_name: {
@@ -580,10 +580,6 @@
                         required: 'Укажите город доставки',
                         minlength: 'Минимум 2 символа'
                     },
-                    user_addr: {
-                        required: 'Укажите адрес доставки',
-                        minlength: 'Не менее 10 символов',
-                    }
                 }
             };
 

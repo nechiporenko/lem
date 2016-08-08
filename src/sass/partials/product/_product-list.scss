@@ -49,3 +49,32 @@
     }
 }
 
+
+//на странице Каталога - максимум 3 в ряд + увеличим размер
+.b-catalog__main{
+    .product-list__item{
+        @include span-columns(12);
+
+        @include media($mobile){
+            @include omega-reset(3n);
+            @include span-columns(6);
+            @include omega(2n);
+        }
+
+        @include media($tablet){
+            @include omega-reset(2n);
+            @include span-columns(4);
+            @include omega(3n);
+        }
+    }
+
+    .b-product{
+        max-width:240px;
+    }
+    .b-product__thumb{
+        max-width:170px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+
