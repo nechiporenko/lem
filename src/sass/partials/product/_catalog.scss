@@ -89,7 +89,17 @@
 
 .b-filter__scroll{
     margin-bottom:$project-line-height;
+    position:relative;
+    height:100%;
+
+
     .b-filter__list{
         margin-bottom:0;
+    }
+}
+
+@include media($tablet){
+    .js .b-filter__scroll{
+        max-height:324px;
     }
 }

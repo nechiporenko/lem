@@ -449,17 +449,72 @@ jQuery(document).ready(function ($) {
     //
     // Скролл для фильтров каталога
     //---------------------------------------------------------------------------------------
-    (function () {
-        $('.js-scroll').each(function () {
-            var $el = $(this);
-            $el.slimScroll({
-                height: '324px',
-                alwaysVisible: true,
-                touchScrollStep: 75,
-                color: '#4387e0'
+    function initFilterScrollBar() {
+        var $scroll = $('.js-scroll'),
+            winW,//будем хранить ширину окна
+            rtime, //переменные для пересчета ресайза окна с задержкой delta
+            timeout = false,
+            delta = 250,
+            BREAKPOINT = 768,
+            isScrollActive = false, //флаг состояния
+            method = {};
+
+        method.initJSscroll = function () {
+            $scroll.perfectScrollbar({
+                wheelSpeed: 1,
+                minScrollbarLength: 30
             });
-        });
-    })();
+            isScrollActive = true;
+        };
+
+        method.destroyJSscroll = function () {
+            $scroll.perfectScrollbar('destroy');
+            isScrollActive = false;
+        };
+
+        method.updateJSscroll = function () {
+            $scroll.perfectScrollbar('update');
+        };
+
+        method.endResize = function () {
+            if (new Date() - rtime < delta) {
+                setTimeout(method.endResize, delta);
+            } else {
+                timeout = false;
+                //ресайз окончен - пересчитываем
+                winW = verge.viewportW();
+                if (winW >= BREAKPOINT) {//если планшет и больше
+                    if (!isScrollActive) {
+                        method.initJSscroll();//если перешли с мелкого размера на десктоп - подключили плагин
+                    } else {
+                        method.updateJSscroll();
+                    }
+                } else {//если мелкий экран
+                    if (isScrollActive) {//и плагин активен
+                        method.destroyJSscroll();//выключаем его
+                    }
+                }
+            }
+        }
+        method.startResize = function () {
+            rtime = new Date();
+            if (timeout === false) {
+                timeout = true;
+                setTimeout(method.endResize, delta);
+            }
+        };
+
+        //проверка при первой загрузке страницы
+        winW = verge.viewportW();
+        if (winW >= BREAKPOINT) {
+            method.initJSscroll();
+        };
+
+        $window.bind('resize', method.startResize);//отслежиаем ресайз
+    }
+    if ($('.js-scroll').length) {
+        initFilterScrollBar();
+    };
 
 
     //
