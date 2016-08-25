@@ -392,7 +392,7 @@ jQuery(document).ready(function ($) {
 
         // закрываем
         method.close = function () {
-            $modal.hide().find('iframe').attr('src', '');//если в модальном окне было видео - убъем
+            //$modal.hide().find('iframe').attr('src', '');//если в модальном окне было видео - убъем
             $overlay.hide().unbind('click', method.close);
             $window.unbind('resize.modal');
         };
