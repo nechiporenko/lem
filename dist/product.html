@@ -248,7 +248,7 @@
                             <dd itemprop="isbn">978-5-98062-066-0</dd>
                         </dl>
 
-                        <a href="#" class="g-btn g-btn--clear">
+                        <a href="#" class="g-btn g-btn--clear" data-modal="#book">
                             <i class="icomoon-book"></i>
                             Пролистать...
                         </a>
@@ -427,6 +427,19 @@
         </form>
     </div>
     <!--/callback modal window-->
+
+    <!--book preview modal-->
+    <div class="modal" id="book">
+        <div class="modal__content">
+            <div class="modal__holder">
+                <div class="modal__scroller">
+                    <script src="js/vendor/pdfobject.min.js"></script>
+                    <embed src="img/del/book.pdf" type="application/pdf" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/book preview modal-->
 
     <!--mobile menu-->
     <div class="page__panel js-mm">
