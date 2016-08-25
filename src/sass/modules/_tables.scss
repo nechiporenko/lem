@@ -72,3 +72,29 @@
         width:30%;
     }
 }
+
+/*Shedule table for mobile*/
+.shedule-tbl{
+    @extend .g-full-width;
+    table-layout:fixed;
+
+    td, th{
+        width:50%;
+    }
+
+    td, th{
+        padding:$project-line-height/2 10px;
+        border:1px solid $border-color;
+    }
+    th{
+        background:#f5f5f5;
+        color:$title-color;
+        font-family:$font-title;
+        font-weight:normal;
+        font-size:rem(15px);
+    }
+
+    tbody > tr:nth-of-type(even) {
+        background:#fafafa;
+    }
+}
