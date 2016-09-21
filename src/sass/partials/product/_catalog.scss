@@ -101,5 +101,6 @@
 @include media($tablet){
     .js .b-filter__scroll{
         max-height:324px;
+        overflow:hidden;
     }
 }
