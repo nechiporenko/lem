@@ -68,6 +68,70 @@ jQuery.extend(verge);
 !function (e) { e.fn.stepper = function (n) { var t = { type: "float", floatPrecission: 2, ui: !0, allowWheel: !0, allowArrows: !0, arrowStep: 1, wheelStep: 1, limit: [null, null], preventWheelAcceleration: !0, incrementButton: "&blacktriangle;", decrementButton: "&blacktriangledown;", onStep: null, onWheel: null, onArrow: null, onButton: null, onKeyUp: null }; return e(this).each(function () { function o(e) { e.preventDefault(); var n, t = e.originalEvent; if (t.wheelDelta ? n = t.wheelDelta / 120 : t.detail && (n = -t.detail / 3), n) { i.preventWheelAcceleration && (n = 0 > n ? -1 : 1); var o = r(i.wheelStep * n); a("Wheel", [o, n > 0]) } } function r(e) { c.val() || c.val(0); var n = "int" == i.type ? parseInt : parseFloat, t = l(n(c.val()) + e); return c.val(t), a("Step", [t, e > 0]), t } function a(e, n) { var t = i["on" + e]; "function" == typeof t && t.apply(c, n) } function l(e) { var n = i.limit[0], t = i.limit[1]; return null !== n && n > e ? e = n : null !== t && e > t && (e = t), p(e) } function p(e, n) { "undefined" == typeof n && (n = i.floatPrecission); var t = Math.pow(10, n); return e = Math.round(e * t) / t } var u = e(this).data(); delete u.stepper; var i = e.extend({}, t, n, u), c = e(this), f = e('<div class="stepper-wrap"/>'); if (!c.data("stepper")) { if (f.insertAfter(c), c.appendTo(f), c.stepper = function () { return { limit: l, decimalRound: p, onStep: function (e) { i.onStep = e }, onWheel: function (e) { i.onWheel = e }, onArrow: function (e) { i.onArrow = e }, onButton: function (e) { i.onButton = e }, onKeyUp: function (e) { i.onKeyUp = e } } }(), c.data("stepper", c.stepper), i.ui) { var s, w = e('<div class="stepper-btn-wrap"/>').appendTo(f), v = e('<a class="button stepper-btn-up">' + i.incrementButton + "</a>").appendTo(w), d = e('<a class="button stepper-btn-dwn">' + i.decrementButton + "</a>").appendTo(w); v.mousedown(function (e) { e.preventDefault(); var n = r(i.arrowStep); a("Button", [n, !0]) }), d.mousedown(function (e) { e.preventDefault(); var n = r(-i.arrowStep); a("Button", [n, !1]) }), e(document).mouseup(function () { clearInterval(s) }) } i.allowWheel && (f.bind("DOMMouseScroll", o), f.bind("mousewheel", o)), f.keydown(function (n) { var t = n.which, o = c.val(); if (i.allowArrows) switch (t) { case 38: o = r(i.arrowStep), a("Arrow", [o, !0]); break; case 40: o = r(-i.arrowStep), a("Arrow", [o, !1]) } (37 > t && t > 40 || t > 57 && 91 > t || t > 105 && 110 != t && 190 != t) && n.preventDefault(), "float" == i.type && -1 != e.inArray(t, [110, 190]) && -1 != o.indexOf(".") && n.preventDefault() }).keyup(function () { a("KeyUp", [c.val()]) }) } }) } }(jQuery);
 
 
+//Modal windows:
+(function ($) {
+    //пример вызова:
+    //$('#modal_id').popup('open')  - открыть
+    //$('#modal_id').popup('close') - закрыть
+
+    $.fn.popup = function (action) {
+        var modal_id = this.selector, //id окна
+            $modal = $(modal_id), //контент окна
+            $body = $('body'),
+            $window = $(window),
+            $overlay = $('#overlay'),
+            $close = $('<button type="button" class="modal__close"><i class="icomoon-cross"></i></button>'), //иконка закрыть
+            method = {};
+
+        method.center = function () {//центрируем окно
+            var top, left;
+            top = Math.max($window.height() - $modal.outerHeight(), 0) / 2;
+            left = Math.max($window.width() - $modal.outerWidth(), 0) / 2;
+
+            $modal.css({
+                top: top + $window.scrollTop(),
+                left: left + $window.scrollLeft()
+            });
+        };
+
+        method.open = function () {//открываем
+            method.center();//отцентрировали
+            $window.bind('resize.modal', method.center);//при ресайзе - пересчитаем положение окна
+
+            var isCloseExist = $modal.find('.modal__close').length;
+
+            if (isCloseExist < 1) {//если открываем первый раз - добавляем кнопку Закрыть
+                $modal.append($close);
+            }
+
+            $modal.show();
+            $('#overlay').show().bind('click', method.close);
+        };
+
+        method.close = function () {//закрываем окно
+            $modal.hide();
+            $('#overlay').hide().unbind('click', method.close);
+            $window.unbind('resize.modal');
+            if (modal_id === '#video') {
+                $modal.find('iframe').attr('src', '');//если в модальном окне было видео - убъем
+            }
+        };
+
+        $modal.on('click', '.modal__close', method.close); //закроем окно при клике по кнопке
+
+        if (action === 'open' && $modal.length) {//открываем
+            method.open();
+        };
+
+        if (action === 'close') {//закрываем
+            method.close();
+        };
+    };
+
+}(jQuery));
+
+
+
 // Application Scripts:
 
 // Десктоп меню (выпадайки)
@@ -77,7 +141,7 @@ jQuery.extend(verge);
 // Форма поиска
 // Маска для телефонного номера
 // Стилизация Select
-// Модальное окно
+// Модальное окно - откроем по клику на [data-modal]
 // Слайдер
 // Вкладки
 // Галерея
@@ -351,62 +415,19 @@ jQuery(document).ready(function ($) {
     if ($('.js-select').length) { stylingSelect(); }
 
     //
-    // Модальное окно
+    // Модальное окно - откроем по клику на [data-modal]
     //---------------------------------------------------------------------------------------
-    var showModal = (function (link) {
-        var
-        method = {},
-        $modal,
-        $close;
-
-        $close = $('<button type="button" class="modal__close"><i class="icomoon-cross"></i></button>'); //иконка закрыть
+    $body.on('click', '[data-modal]', function (e) {
+        e.preventDefault();
+        var link = $(this).data('modal');
+        if (link.length > 0) { $(link).popup('open') }
+    });
 
 
-        $close.on('click', function () {
-            method.close();
-        });
-
-        // центрируем окно
-        method.center = function () {
-            var top, left;
-
-            top = Math.max($window.height() - $modal.outerHeight(), 0) / 2;
-            left = Math.max($window.width() - $modal.outerWidth(), 0) / 2;
-
-            $modal.css({
-                top: top + $window.scrollTop(),
-                left: left + $window.scrollLeft()
-            });
-        };
-
-
-        // открываем
-        method.open = function (link) {
-            $modal = $(link);
-            $modal.append($close);
-            method.center();
-            $window.bind('resize.modal', method.center).trigger('resize');
-            $modal.fadeIn(400);
-            $overlay.show().bind('click', method.close);
-        };
-
-        // закрываем
-        method.close = function () {
-            //$modal.hide().find('iframe').attr('src', '');//если в модальном окне было видео - убъем
-            $overlay.hide().unbind('click', method.close);
-            $window.unbind('resize.modal');
-        };
-
-        // клик по кнопке с атрибутом data-modal - открываем модальное окно
-        $body.on('click', '[data-modal]', function (e) {
-            e.preventDefault();
-            var link = $(this).data('modal');
-            if (link) { showModal.open(link); }
-        });
-
-        return method;
-    }());
-
+    $('.modal').on('click', '[data-modal-close]', function () {//если нужна доп.кнопка для закрытия окна
+        var id = '#' + $(this).parents('.modal').attr('id');
+        $(id).popup('close');
+    });
     
     //
     // Слайдер
@@ -499,7 +520,7 @@ jQuery(document).ready(function ($) {
 
         if (id) {
             $('#video').find('iframe').attr('src', 'https://www.youtube.com/embed/' + id + '?rel=0&amp;showinfo=0;autoplay=1');
-            showModal.open('#video');
+            $('#video').popup('open');
         }
 
         function getYoutubeID(url) {//парсим youtube-ссылку, возвращаем id видео

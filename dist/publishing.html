@@ -324,7 +324,7 @@
                                             Джон Фарндон
                                         </div>
                                         <span class="b-product__price">480 <span class="b-product__curr">тенге</span></span>
-                                        <button type="button" class="b-product__btn">Купить</button>
+                                        <button type="button" class="b-product__btn" data-modal="#add_to_cart">Купить</button>
                                     </figcaption>
                                 </figure>
                             </li>
@@ -566,6 +566,24 @@
         </form>
     </div>
     <!--/callback modal window-->
+    
+    <!--add to cart modal window-->
+    <div class="modal modal--add-to-cart" id="add_to_cart">
+        <div class="modal__content g-text-center">
+            <span class="g-title">Ваш товар успешно добавлен в корзину</span>
+            <p>&nbsp;</p>
+            <div class="g-row">
+                <div class="g-col g-col--one-half">
+                    <button type="button" class="g-btn" data-modal-close>Продолжить покупки</button>
+                </div>
+                
+                <div class="g-col g-col--one-half">
+                    <a href="cart.html" class="g-btn color2">Оформить заказ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/add to cart modal window-->
 
     <!--mobile menu-->
     <div class="page__panel js-mm">
